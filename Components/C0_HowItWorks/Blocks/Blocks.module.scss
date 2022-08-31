@@ -100,7 +100,6 @@
   }
 }
 
-
 .tgLink {
   text-decoration: none;
   color: #FFF;
@@ -250,14 +249,8 @@
           align-items: normal;
         }
       }
-
     }
-
   }
-
-
-
-
  }
 
 .decorateText {
@@ -278,4 +271,15 @@
     box-sizing: border-box;
     font-size: 18px;
   }
+}
+
+.startBtn {
+  margin-top: 30px;
+  width: 190px;
+
+  @include desktop {
+    width: 188px;
+  }
+
+
 }

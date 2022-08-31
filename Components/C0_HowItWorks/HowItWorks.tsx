@@ -6,6 +6,7 @@ import {Navigation} from "./Navigation/Navigation";
 import {LevelSchedule} from "./Blocks/B2_LevelSchedule";
 import {LiveDemo} from "./Blocks/B3_LiveDemo";
 import {Referrals} from "./Blocks/B4_Referrals";
+import {Registration} from "./Blocks/B5_Registration";
 
 export const contentLinks = [
     "About game",
@@ -22,7 +23,7 @@ const blocks = [
     <LevelSchedule/>,
     <LiveDemo/>,
     <Referrals/>,
-    <p>text</p>,
+    <Registration/>,
 ]
 
 export const HowItWorks = () => {

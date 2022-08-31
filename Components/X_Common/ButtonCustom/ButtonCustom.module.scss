@@ -2,7 +2,7 @@
 
 .buttonCustom {
   @include button;
-  @include centerColumn;
+  @include centerRow;
   height: 44px;
   width: 100%;
   border-radius: 1000px;
@@ -28,5 +28,19 @@
     font-size: 14px;
     line-height: 21px;
     color: #FFF;
+  }
+
+  svg {
+    width: 17px;
+    margin-left: 10px;
+    transition: 0.3s;
+  }
+
+  &_animateIcon {
+    &:hover {
+      svg {
+        transform: translateX(6px);
+      }
+    }
   }
 }
