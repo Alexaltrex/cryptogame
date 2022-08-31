@@ -1,0 +1,281 @@
+@import "../../../assets/scss/app";
+
+.title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+
+  @include desktop {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+.pretitle {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+
+  @include desktop {
+    font-size: 32px;
+    line-height: 48px;
+  }
+}
+
+
+.subtitle {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  @include desktop {
+    margin-top: 40px;
+    font-size: 24px;
+  }
+}
+
+.text {
+  margin-top: 20px;
+
+  p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 160%;
+    color: #CFD0D4;
+  }
+
+
+  @include desktop {
+    margin-top: 25px;
+
+    p {
+      font-size: 18px;
+    }
+
+  }
+
+  p.white, span.white {
+    font-weight: 600;
+    color: #FFF;
+  }
+}
+
+.block {
+  &:not(:first-child) {
+    margin-top: 50px;
+
+    @include desktop {
+      margin-top: 64px;
+    }
+  }
+}
+
+.img0 {
+  display: block;
+  margin-top: 30px;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include desktop {
+    width: 576px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.img1 {
+  display: block;
+  margin-top: 30px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include desktop {
+    margin-top: 40px;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+.tgLink {
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+  margin-top: 30px;
+  background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+  border-radius: 15px;
+  padding: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+
+  @include desktop {
+    margin-top: 40px;
+    padding: 14px 20px;
+    font-size: 18px;
+    width: 734px;
+  }
+}
+
+.accountWrapper {
+  align-self: stretch;
+  margin-top: 15px;
+  background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 30px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 15px;
+
+  @include desktop {
+    width: 470px;
+  }
+
+  .account {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .copyBtn {
+    @include button;
+    margin-left: 15px;
+  }
+
+  .linkBtn {
+    @include button;
+    margin-left: 10px;
+  }
+
+}
+
+.table {
+   background: rgba(127, 133, 178, 0.05);
+   border-radius: 15px;
+   border: 1px solid rgba(181, 207, 204, 0.17);
+   margin-top: 30px;
+
+   @include desktop {
+     margin-top: 40px;
+   }
+
+   .head {
+     @include onlyDesktop(grid);
+     padding: 0px 40px;
+     height: 80px;
+     grid-template-columns: repeat(4, 1fr);
+
+     .headCell {
+       font-weight: 400;
+       font-size: 16px;
+       line-height: 24px;
+       color: #83848E;
+       height: 100%;
+       display: flex;
+       align-items: center;
+     }
+   }
+
+  .row {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 10px;
+
+    @include desktop {
+      height: 80px;
+      padding: 0px 40px;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      grid-row-gap: 0;
+    }
+
+    &:not(:first-child) {
+      border-top: 1px solid #2D3242;
+    }
+
+    .cell {
+      display: flex;
+      flex-direction: column;
+
+      @include desktop {
+        justify-content: center;
+      }
+
+      .label {
+        @include onlyMobile;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        color: #828282;
+      }
+
+      .value {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+
+        @include desktop {
+          font-size: 18px;
+          line-height: 27px;
+        }
+
+        svg {
+          margin-left: 4px;
+          width: 10px;
+          height: 10px;
+
+          @include desktop {
+            margin-left: 6px;
+            width: 13px;
+            height: 13px;
+          }
+        }
+      }
+
+      &:nth-child(2), &:nth-child(4) {
+        align-items: flex-end;
+
+        @include desktop {
+          align-items: normal;
+        }
+      }
+
+    }
+
+  }
+
+
+
+
+ }
+
+.decorateText {
+  margin-top: 30px;
+  background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+  border-radius: 15px;
+  border: 1px solid rgba(181, 207, 204, 0.17);
+  padding: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+
+  @include desktop {
+    margin-top: 34px;
+    padding: 15px 20px;
+    width: 712px;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
+}

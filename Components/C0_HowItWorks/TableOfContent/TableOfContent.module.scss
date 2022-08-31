@@ -1,0 +1,57 @@
+@import "../../../assets/scss/app";
+
+.tableOfContent {
+  @include onlyDesktop;
+  align-self: flex-start;
+  flex-shrink: 0;
+  background: rgba(127, 133, 178, 0.05);
+  border-radius: 15px;
+  border: 1px solid #B5CFCC;
+  width: 260px;
+
+  .header {
+    padding: 25px 30px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);;
+  }
+
+  .links {
+    position: relative;
+    padding: 30px 040px;
+    display: flex;
+    flex-direction: column;
+
+    .mover {
+      position: absolute;
+      //top: 26px;
+      left: -1px;
+      width: 4px;
+      height: 32px;
+      background: #745BD7;
+      border-radius: 0px 2px 2px 0px;
+      transition: 0.3s;
+    }
+
+
+    .link {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #83848E;
+      transition: 0.3s;
+
+      &_active {
+        color: #FFF;
+      }
+
+      &:not(:first-child) {
+        margin-top: 17px;
+      }
+    }
+  }
+}

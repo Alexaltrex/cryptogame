@@ -1,0 +1,184 @@
+@import "./assets/scss/app";
+
+.howToStart {
+  @include container;
+  padding-top: 70px;
+
+  @include desktop {
+    padding-top: 150px;
+  }
+
+  .inner {
+    @include inner;
+
+    .cards {
+      position: relative;
+      margin-top: 50px;
+
+      @include desktop {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 40px;
+      }
+
+      .arrowMobile {
+        @include onlyMobile;
+        position: absolute;
+        top: -70px;
+        left: 15px;
+      }
+
+      .arrowDesktop {
+        @include onlyDesktop;
+        position: absolute;
+        top: -97px;
+        left: 63px;
+      }
+
+      .tryMobile {
+        @include onlyMobile();
+        position: absolute;
+        top: -40px;
+        left: -25px;
+      }
+
+      .tryDesktop {
+        @include onlyDesktop();
+        position: absolute;
+        top: -57px;
+        left: -54px;
+      }
+
+
+
+      .card {
+        position: relative;
+        background: rgba(127, 133, 178, 0.13);
+        backdrop-filter: blur(129px);
+        border-radius: 15px;
+        border: 1px solid rgba(181, 207, 204, 0.17);
+        height: 120px;
+        display: flex;
+
+        @include desktop {
+          height: 190px;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        &:not(:first-child)  {
+          margin-top: 20px;
+
+          @include desktop {
+            margin-top: 0;
+          }
+        }
+
+        .imgWrapper {
+          width: 50%;
+          flex-grow: 1;
+          @include centerColumn;
+
+          @include desktop {
+            width: auto;
+            flex-grow: 0;
+            margin-top: 47px;
+          }
+
+          img {
+            display: block;
+            height: 70px;
+            width: auto;
+
+            @include desktop {
+              height: 80px;
+            }
+          }
+        }
+
+        .textWrapper {
+          width: 50%;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          @include desktop {
+            width: auto;
+            flex-grow: 0;
+            margin-top: 10px;
+          }
+
+          .step {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            color: #55586C;
+
+            @include desktop {
+              position: absolute;
+              font-size: 20px;
+              line-height: 30px;
+              top: 10px;
+              right: 16px;
+            }
+          }
+
+          .text {
+            margin-top: 5px;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+
+            @include desktop {
+              margin-top: 0;
+            }
+          }
+        }
+
+        &_blue {
+          background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+          height: 166px;
+          @include centerColumn;
+
+          @include desktop {
+            height: 190px;
+          }
+
+          .title {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 36px;
+            text-transform: uppercase;
+          }
+
+          .subtitle {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+            margin-top: 1px;
+
+            @include desktop {
+              margin-top: 5px;
+            }
+
+          }
+
+          .btn {
+            width: 185px;
+            margin-top: 24px;
+
+            @include desktop {
+              width: 150px;
+              margin-top: 35px;
+            }
+          }
+
+        }
+
+
+      }
+
+    }
+  }
+}

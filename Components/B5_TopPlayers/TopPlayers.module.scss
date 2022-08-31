@@ -1,0 +1,269 @@
+@import "./assets/scss/app";
+
+.topPlayers {
+  @include container;
+
+  .inner {
+    @include inner;
+    padding-top: 150px;
+
+    .cards {
+
+      margin-top: 30px;
+
+      @include desktop {
+        margin-top: 50px;
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 40px;
+
+      }
+
+      .card {
+        position: relative;
+        background: rgba(127, 133, 178, 0.13);
+        //backdrop-filter: blur(129px);
+        border-radius: 15px;
+        border: 1px solid rgba(181, 207, 204, 0.17);
+        padding: 20px 15px;
+
+        @include desktop {
+          padding: 26px;
+        }
+
+        &:not(:first-child) {
+          margin-top: 20px;
+
+          @include desktop {
+            margin-top: 0;
+          }
+        }
+
+        &:hover {
+          .popover {
+
+            @include desktop {
+              display: flex;
+              opacity: 1;
+            }
+          }
+        }
+
+        .top {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          justify-content: space-between;
+
+          .top_left {
+            .number {
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 21px;
+              color: #FFD84C;
+
+              @include desktop {
+                font-size: 16px;
+                line-height: 24px;
+              }
+            }
+
+            .id {
+              font-weight: 600;
+              font-size: 16px;
+              line-height: 24px;
+
+              @include desktop {
+                font-size: 20px;
+                line-height: 30px;
+              }
+            }
+
+            .playsFor {
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 21px;
+
+              span:nth-child(1) {
+                color: rgba(255, 255, 255, 0.36);
+              }
+            }
+          }
+
+          .top_right {
+            background: rgba(127, 133, 178, 0.34);
+            //backdrop-filter: blur(19px);
+            border-radius: 15px;
+            border: 1px solid rgba(181, 207, 204, 0.17);
+            padding: 10px 12px;
+
+            @include desktop {
+              padding: 12px 15px;
+            }
+
+            .label {
+              font-weight: 700;
+              font-size: 12px;
+              line-height: 18px;
+              text-transform: uppercase;
+
+              @include desktop {
+                font-size: 14px;
+                line-height: 21px;
+              }
+            }
+
+            .valueBlock {
+              display: flex;
+              align-items: center;
+              margin-top: 4px;
+
+              @include desktop {
+                margin-top: 0;
+              }
+
+              p {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 24px;
+
+                @include desktop {
+                  font-size: 20px;
+                  line-height: 30px;
+                }
+              }
+
+              svg {
+                margin-left: 5px;
+                width: 12px;
+                height: 12px;
+
+                @include desktop {
+                  margin-left: 6px;
+                  width: 15px;
+                  height: 15px;
+                }
+              }
+            }
+
+          }
+        }
+
+        .bottom {
+          position: relative;
+          z-index: 1;
+          margin-top: 35px;
+
+          @include desktop {
+            margin-top: 60px;
+          }
+
+          .label {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 18px;
+
+            @include desktop {
+              font-size: 14px;
+              line-height: 21px;
+            }
+          }
+
+          .levels {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-column-gap: 6px;
+            margin-top: 10px;
+
+            @include desktop {
+              margin-top: 16px;
+              grid-column-gap: 8px;
+            }
+
+            .item {
+              background: #424557;
+              height: 20px;
+              border-radius: 5px;
+
+              &_fill {
+                background: #FFFFFF;
+              }
+            }
+          }
+
+          .link {
+            @include onlyMobile;
+            @include centerColumn;
+            position: absolute;
+            top: -18px;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background: #272A3B;
+            border-radius: 5px;
+
+            svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+
+        .popover {
+          display: none;
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(33, 36, 57, 0.47);
+          backdrop-filter: blur(9px);
+
+          @include desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: 0.3s;
+          }
+
+          .link {
+            @include centerColumn;
+            text-decoration: none;
+            color: #FFF;
+            width: 143px;
+            height: 50px;
+            border: 1px solid #FFFFFF;
+            border-radius: 100px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+
+        &_first {
+          background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+
+          & .bottom {
+
+            .link {
+              background: #543CBB;
+            }
+
+            .levels {
+              .item {
+                background: #654DC5;
+
+                &_fill {
+                  background: #FFF;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

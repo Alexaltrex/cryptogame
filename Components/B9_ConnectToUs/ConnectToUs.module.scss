@@ -1,0 +1,90 @@
+@import "./assets/scss/app";
+
+.connectToUs {
+  margin-top: 80px;
+  @include container;
+  background: rgba(127, 133, 178, 0.05);
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include desktop {
+    margin-top: 150px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .inner {
+    position: relative;
+    @include inner;
+
+    .title {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 112%;
+      text-align: center;
+      color: #9093AA;
+
+      span {
+        color: #FFF;
+      }
+
+      @include desktop {
+        font-size: 50px;
+      }
+    }
+
+    .text {
+      margin-top: 20px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 160%;
+      text-align: center;
+
+      @include desktop {
+        margin-top: 32px;
+      }
+    }
+
+    .btn {
+      margin-top: 30px;
+
+      @include desktop {
+        margin-top: 0;
+        position: absolute;
+        top: 15px;
+        left: calc(50% + 372px);
+        width: 70px;
+        height: 37px;
+
+        &:hover {
+          @include desktop {
+            background: #FFF;
+
+            svg {
+              path, rect {
+                fill: #141627;
+                fill: #141627;
+              }
+            }
+          }
+        }
+
+        span {
+          display: none;
+        }
+
+        svg {
+          margin-left: 0;
+          path, rect {
+            transition: 0.3s;
+
+          }
+        }
+      }
+    }
+
+  }
+
+
+
+}

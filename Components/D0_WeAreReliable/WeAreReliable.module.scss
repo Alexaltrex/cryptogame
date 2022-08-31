@@ -1,0 +1,230 @@
+@import "./assets/scss/app";
+
+.weAreReliable {
+  @include container;
+  padding-top: 50px;
+  padding-bottom: 70px;
+
+  @include desktop {
+    padding-top: 120px;
+    padding-bottom: 155px;
+  }
+
+  .inner {
+    @include inner;
+    //background: rgba(127, 133, 178, 0.05);
+    //border: 1px solid rgba(181, 207, 204, 0.17);
+    //border-radius: 15px;
+    //padding: 30px 20px 20px;
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      //padding: 0px 60px;
+      //height: 424px;
+    }
+
+    .firstBlock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include desktop {
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 110%;
+        text-align: center;
+
+        @include desktop {
+          font-size: 42px;
+          line-height: 112%;
+          text-align: left;
+          width: 407px;
+        }
+      }
+
+      .text {
+        margin-top: 30px;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+
+        @include desktop {
+          text-align: left;
+        }
+      }
+
+      .accountWrapper {
+        align-self: stretch;
+        margin-top: 15px;
+        background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.12);
+        border-radius: 30px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0px 15px;
+
+        @include desktop {
+          width: 350px;
+        }
+
+        .account {
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .copyBtn {
+          @include button;
+          margin-left: 15px;
+        }
+
+        .linkBtn {
+          @include button;
+          margin-left: 10px;
+        }
+
+      }
+
+      .downloadBlock {
+        margin-top: 30px;
+
+        @include desktop {
+          margin-top: 40px;
+        }
+
+        .text {
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+          text-align: center;
+
+          @include desktop {
+            text-align: left;
+          }
+        }
+
+        .selectAndButton {
+          display: flex;
+          align-items: center;
+
+          .downloadBtn {
+            width: 180px;
+
+            @include desktop {
+              width: 244px;
+            }
+          }
+        }
+
+      }
+
+
+
+    }
+
+    .secondBlock {
+      position: relative;
+      margin-top: 50px;
+      align-self: center;
+
+      @include desktop {
+        margin-top: 0;
+      }
+
+      .card {
+        height: 190px;
+        object-fit: cover;
+        object-position: center;
+
+        @include desktop {
+          height: 290px;
+        }
+      }
+
+      .playBtn {
+        @include button;
+        @include centerColumn;
+        position: absolute;
+        left: 14px;
+        bottom: 14px;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        outline: 4px solid rgba(2525, 255, 255, 0.2);
+        background: #FFF;
+        transition: 0.3s;
+
+        svg {
+          width: 10px;
+          height: 10px;
+        }
+
+        @include desktop {
+          width: 48px;
+          height: 49px;
+          left: 26px;
+          bottom: 26px;
+          outline: 6px solid rgba(2525, 255, 255, 0.2);
+
+          svg {
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        &:hover {
+          outline: 9px solid rgba(2525, 255, 255, 0.2);
+        }
+
+      }
+
+      .text {
+        position: absolute;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 114%;
+        width: 123px;
+        left: 60px;
+        bottom: 14px;
+
+        @include desktop {
+          font-size: 22px;
+          width: 173px;
+          left: 92px;
+          bottom: 25px;
+        }
+      }
+
+      .labelMobile {
+        @include onlyMobile();
+        position: absolute;
+        top: -45px;
+        right: -40px;
+      }
+
+      .labelDesktop {
+        @include onlyDesktop();
+        position: absolute;
+        top: -40px;
+        left: -50px;
+      }
+
+    }
+
+  }
+}

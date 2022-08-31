@@ -1,0 +1,32 @@
+@import "./assets/scss/app";
+
+.buttonCustom {
+  @include button;
+  @include centerColumn;
+  height: 44px;
+  width: 100%;
+  border-radius: 1000px;
+  background: #745BD7;
+  transition: 0.3s;
+
+  &:hover {
+    background: #5C3FCE;
+  }
+
+  &:disabled {
+    background: #272A3B;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: auto;
+
+    span {
+      color: #83848E;
+    }
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFF;
+  }
+}

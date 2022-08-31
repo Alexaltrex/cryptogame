@@ -1,0 +1,136 @@
+@import "./assets/scss/app";
+
+.table {
+  @include container;
+  padding-top: 20px;
+
+  @include desktop {
+    padding-top: 40px;
+  }
+
+  .inner {
+    @include inner;
+
+    .tableBlock {
+      background: rgba(127, 133, 178, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(181, 207, 204, 0.17);
+
+      .head {
+        @include onlyDesktop(grid);
+
+        .label {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #83848E;
+        }
+      }
+
+      .row {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-row-gap: 9px;
+
+        @include desktop {
+          padding: 27px 40px;
+          grid-row-gap: 0;
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: repeat(1, 1fr);
+        }
+
+        .cell {
+          display: flex;
+          flex-direction: column;
+
+          .label {
+            @include onlyMobile;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+            color: #83848E;
+
+          }
+
+          .value {
+            color: #FFF;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 18px;
+
+            .grey {
+              color: #83848E;
+            }
+
+            @include desktop {
+              font-size: 18px;
+              line-height: 27px;
+            }
+          }
+
+          &:nth-child(3) .value {
+            svg {
+              width: 10px;
+              height: 10px;
+              margin-left: 4px;
+
+              @include desktop {
+                width: 13px;
+                height: 13px;
+                margin-left: 6px;
+              }
+            }
+          }
+
+          a {
+            align-self: flex-end;
+            @include centerColumn;
+            border-radius: 5px;
+            background: #272A3B;
+            border: 1px solid rgba(181, 207, 204, 0.17);
+            width: 30px;
+            height: 30px;
+
+            @include desktop {
+              width: 42px;
+              height: 42px;
+            }
+
+            svg {
+              width: 12px;
+
+              @include desktop {
+                width: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .btn {
+      @include button;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      border-bottom: 1px solid #FFF;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 25px;
+      color: #FFFFFF;
+
+      @include desktop {
+        font-size: 16px;
+        margin-top: 40px;
+      }
+    }
+
+
+
+
+
+  }
+}

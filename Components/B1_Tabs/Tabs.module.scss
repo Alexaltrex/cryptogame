@@ -1,0 +1,237 @@
+@import "./assets/scss/app";
+
+.tabs {
+  position: relative;
+  padding-top: 70px;
+
+  @include desktop {
+    padding-top: 60px;
+  }
+
+  .tabsImg {
+    @include onlyDesktop();
+    position: absolute;
+    z-index: 1;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1160px;
+  }
+
+  .menu {
+    position: relative;
+    z-index: 2;
+    @include container;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(127, 133, 178, 0.13);
+    backdrop-filter: blur(129px);
+    border-top: 1px solid rgba(181, 207, 204, 0.17);
+    border-bottom: 1px solid rgba(181, 207, 204, 0.17);
+
+    @include desktop {
+      padding-bottom: 0;
+      background: none;
+      backdrop-filter: none;
+      border: none;
+    }
+
+    .inner {
+      @include inner;
+      display: flex;
+      justify-content: center;
+
+      .item {
+        cursor: pointer;
+        user-select: none;
+        text-align: center;
+        color: #83848E;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        width: 70px;
+
+        @include desktop {
+          width: 80px;
+        }
+
+        &_selected {
+          color: #FFF;
+
+          span {
+            border-bottom: 1px solid #FFF;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .values {
+    position: relative;
+    z-index: 2;
+    @include container;
+    margin-top: 30px;
+
+    @include desktop {
+      margin-top: 36px;
+    }
+
+    .inner {
+      @include inner;
+      background: rgba(127, 133, 178, 0.13);
+      backdrop-filter: blur(129px);
+      border-radius: 15px;
+      height: 280px;
+      //padding: 25px 20px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      @include desktop {
+        background: none;
+        backdrop-filter: none;
+        border-radius: 0;
+        padding: 0 0 40px;
+        height: auto;
+
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
+
+      .valuesItem {
+        position: relative;
+        @include centerColumn;
+
+        @include desktop {
+          padding-bottom: 5px;
+        }
+
+        .value {
+          font-weight: 500;
+          font-size: 28px;
+          line-height: 42px;
+          text-align: center;
+
+          @include desktop {
+            font-size: 48px;
+            line-height: 72px;
+          }
+        }
+
+        .text {
+          margin-top: 7px;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+          text-align: center;
+
+          @include desktop {
+            margin-top: 4px;
+
+          }
+        }
+
+        &:nth-child(1) {
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 24px;
+            right: 0;
+            bottom: 10px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.14);
+
+            @include desktop {
+              display: none;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            right: 24px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.14);
+
+            @include desktop {
+              left: 0;
+              right: auto;
+              height: auto;
+              top: 0;
+              width: 1px;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 24px;
+            right: 10px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.14);
+
+            @include desktop {
+              left: 0;
+              right: auto;
+              width: 1px;
+              bottom: 0;
+              height: auto;
+            }
+          }
+        }
+
+        &:nth-child(4) {
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 1px;
+            bottom: 24px;
+            background: rgba(255, 255, 255, 0.14);
+
+            @include desktop {
+              top: 0;
+              bottom: 0;
+            }
+          }
+        }
+
+        //&:not(:first-child) {
+        //  &::after {
+        //    @include desktop {
+        //      content: '';
+        //      display: block;
+        //      position: absolute;
+        //      top: 0;
+        //      left: 0;
+        //      width: 1px;
+        //      bottom: 0;
+        //      background: rgba(255, 255, 255, 0.14);
+        //
+        //    }
+        //  }
+        //
+        //}
+
+
+      }
+    }
+  }
+
+
+}

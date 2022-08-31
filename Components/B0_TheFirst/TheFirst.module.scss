@@ -1,0 +1,168 @@
+@import "./assets/scss/app";
+
+.theFirst {
+  @include container;
+  padding-top: 60px;
+
+  @include desktop {
+    padding-top: 104px;
+    padding-bottom: 110px;
+  }
+
+
+  .inner {
+    @include inner;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .titleWrapper {
+      position: relative;
+
+      @include desktop {
+        width: 790px;
+      }
+
+      .title {
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 110%;
+        text-align: center;
+
+        @include desktop {
+          font-size: 70px;
+        }
+
+        span:nth-child(2) {
+          color: #8A6DFD;
+        }
+      }
+
+
+      .img1Desktop {
+        @include onlyDesktop;
+        position: absolute;
+        top: -42px;
+        right: -29px;
+      }
+
+      .img2Desktop {
+        @include onlyDesktop;
+        position: absolute;
+        top: 13px;
+        left: -200px;
+      }
+
+      .img3Desktop {
+        @include onlyDesktop;
+        position: absolute;
+        bottom: -321px;
+        left: -200px;
+      }
+
+      .img4Desktop {
+        @include onlyDesktop;
+        position: absolute;
+        bottom: -321px;
+        right: -153px;
+      }
+
+      .arrow1 {
+        @include onlyDesktop;
+        position: absolute;
+        left: -122px;
+        bottom: -44px;
+      }
+
+      .arrow2 {
+        @include onlyDesktop;
+        position: absolute;
+        left: 32px;
+        bottom: -114px;
+      }
+
+      .arrow3 {
+        @include onlyDesktop;
+        position: absolute;
+        right: -60px;
+        bottom: -57px;
+      }
+
+    }
+
+    .description {
+      margin-top: 20px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 160%;
+      text-align: center;
+
+      @include desktop {
+        margin-top: 30px;
+      }
+    }
+
+
+    .btnWrapper {
+      position: relative;
+      margin-top: 25px;
+
+      @include desktop {
+        margin-top: 40px;
+      }
+
+      .btn {
+        width: 190px;
+
+        @include desktop {
+          width: 232px;
+        }
+      }
+
+      .arrow1, .arrow2 {
+        @include onlyMobile;
+        position: absolute;
+      }
+
+      .arrow1 {
+        bottom: -42px;
+        left: -34px;
+      }
+
+      .arrow2 {
+        bottom: -42px;
+        right: -36px;
+      }
+
+    }
+
+    .link {
+      @include onlyDesktop;
+      margin-top: 25px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 25px;
+      //text-decoration: none;
+      color: #FFF;
+    }
+
+    .imgs {
+      margin-top: 60px;
+      @include onlyMobile(flex);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+
+      img {
+        display: block;
+
+        &:not(:first-child) {
+          margin-left: 10px;
+        }
+      }
+    }
+
+
+  }
+}

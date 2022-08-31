@@ -1,0 +1,63 @@
+@import "./assets/scss/app";
+
+.policy {
+  @include container;
+  padding-top: 40px;
+  padding-bottom: 70px;
+
+  @include desktop {
+    padding-top: 70px;
+    padding-bottom: 150px;
+  }
+
+  .inner {
+    @include inner;
+
+    .block {
+      &:not(:first-child) {
+        margin-top: 50px;
+
+        @include desktop {
+          margin-top: 70px;
+        }
+      }
+
+      .title {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 42px;
+
+        @include desktop {
+          font-size: 40px;
+          line-height: 60px;
+        }
+      }
+
+      .subtitle {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+
+        @include desktop {
+          font-size: 32px;
+          line-height: 48px;
+        }
+      }
+
+      .text {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 160%;
+        color: #CFD0D4;
+
+        @include desktop {
+          font-size: 18px;
+          line-height: 150%;
+        }
+      }
+
+
+
+    }
+  }
+}

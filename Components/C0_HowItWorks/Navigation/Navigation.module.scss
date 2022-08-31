@@ -1,0 +1,64 @@
+@import "../../../assets/scss/app";
+
+.navigation {
+  @include onlyMobile;
+
+  .header {
+    display: flex;
+    align-items: center;
+
+    .title {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 160%;
+      margin-left: 5px;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 16px;
+    background: rgba(127, 133, 178, 0.05);
+    border-radius: 8px;
+    padding: 13px 15px;
+    border: 1px solid rgba(181, 207, 204, 0.17);
+
+    .link {
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #83848E;
+
+      &_active {
+        color: #FFF;
+      }
+
+      &:not(:first-child) {
+        margin-top: 26px;
+      }
+    }
+
+    .btn {
+      @include button;
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      top: 12px;
+      right: 15px;
+
+      svg {
+        transition: 0.3s;
+      }
+
+      &_open {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+  }
+}

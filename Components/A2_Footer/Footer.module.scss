@@ -1,0 +1,198 @@
+@import "./assets/scss/app";
+
+.footer {
+
+  .top {
+    @include container;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));
+    }
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0));
+    }
+
+    @include desktop {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      height: 100px;
+    }
+
+    .inner {
+      @include inner;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logoBlock {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #FFF;
+
+        img {
+          display: block;
+          height: 33px;
+
+          @include desktop {
+            height: 45px;
+          }
+        }
+
+        .text {
+          font-weight: 500;
+          font-size: 12.9873px;
+          line-height: 100%;
+          width: 41px;
+
+          @include desktop {
+            font-size: 18px;
+            width: 57px;
+          }
+        }
+      }
+
+      .links {
+        margin-top: 35px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include desktop {
+          margin-top: 0;
+          flex-direction: row;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .link {
+          text-transform: none;
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          color: #FFF;
+
+          @include desktop {
+            font-size: 16px;
+            line-height: 24px;
+          }
+
+          &:not(:first-child) {
+            margin-top: 20px;
+
+            @include desktop {
+              margin-top: 0;
+              margin-left: 50px;
+            }
+
+
+          }
+        }
+      }
+
+      .btn {
+        margin-top: 25px;
+        width: 190px;
+
+        @include desktop {
+          margin-top: 0;
+          width: 174px;
+        }
+      }
+
+
+    }
+
+  }
+
+  .bottom {
+    @include container;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    @include desktop {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      height: 80px;
+    }
+
+    .inner {
+      @include inner;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include desktop {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .right {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 21px;
+        color: #83848E;
+      }
+
+      .links {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include desktop {
+          margin-top: 0;
+          flex-direction: row;
+        }
+
+        a {
+          text-decoration: none;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+          color: #83848E;
+
+          &:not(:first-child) {
+            margin-top: 20px;
+
+            @include desktop {
+              margin-top: 0;
+              margin-left: 32px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+}

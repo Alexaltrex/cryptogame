@@ -1,0 +1,55 @@
+@import "./assets/scss/app";
+
+.buttonOutlined {
+  @include button;
+  @include centerRow;
+  border-radius: 1000px;
+  width: 100%;
+  border: 1px solid #FFFFFF;
+  height: 46px;
+  transition: 0.3s;
+
+  @include desktop {
+    height: 50px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+
+    @include desktop {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  svg {
+    width: 17px;
+    margin-left: 10px;
+    transition: 0.3s;
+  }
+
+  &:disabled {
+    border: 1px solid #83848E;
+
+    span {
+      color: #83848E;
+    }
+
+    svg {
+
+    }
+  }
+
+  &_animateIcon {
+    &:hover {
+      border: 1px solid #CACBD6;
+
+      svg {
+        transform: translateX(6px);
+      }
+    }
+  }
+}
