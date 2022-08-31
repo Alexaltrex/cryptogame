@@ -38,6 +38,7 @@
       .tryMobile {
         @include onlyMobile();
         position: absolute;
+        z-index: 2;
         top: -40px;
         left: -25px;
       }
@@ -45,6 +46,7 @@
       .tryDesktop {
         @include onlyDesktop();
         position: absolute;
+        z-index: 2;
         top: -57px;
         left: -54px;
       }
@@ -53,6 +55,7 @@
 
       .card {
         position: relative;
+        z-index: 1;
         background: rgba(127, 133, 178, 0.13);
         backdrop-filter: blur(129px);
         border-radius: 15px;

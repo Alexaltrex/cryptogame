@@ -9,7 +9,6 @@ import {HowToStart} from "../Components/B7_HowToStart/HowToStart";
 import {WeAreReliable} from "../Components/B8_WeAreReliable/WeAreReliable";
 import {ConnectToUs} from "../Components/B9_ConnectToUs/ConnectToUs";
 
-
 const Home: NextPage = () => {
     return (
         <MainLayout>

@@ -118,12 +118,13 @@
       }
 
       .card {
-        height: 190px;
+        //height: 190px;
+        width: 240px;
         object-fit: cover;
         object-position: center;
 
         @include desktop {
-          height: 290px;
+          width: auto;
         }
       }
 

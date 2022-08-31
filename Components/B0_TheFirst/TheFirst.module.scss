@@ -2,6 +2,7 @@
 
 .theFirst {
   @include container;
+  overflow: hidden;
   padding-top: 60px;
 
   @include desktop {
