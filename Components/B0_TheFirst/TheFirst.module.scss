@@ -4,10 +4,12 @@
   @include container;
   overflow: hidden;
   padding-top: 60px;
+  padding-bottom: 70px;
 
   @include desktop {
+    //overflow: ;
     padding-top: 104px;
-    padding-bottom: 110px;
+    padding-bottom: 170px;
   }
 
 
