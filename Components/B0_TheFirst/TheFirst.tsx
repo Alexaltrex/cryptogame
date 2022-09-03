@@ -7,7 +7,7 @@ import Link from "next/link";
 const description = "Unlock new levels and get extra profit, without inviting new players!";
 
 export const TheFirst = () => {
-    const delays = ["500", "1000", "1500", "2000", "2500", "3000"]
+    const delays = ["250", "500", "750", "1000", "1250", "1500"]
 
     return (
         <div className={style.theFirst}>

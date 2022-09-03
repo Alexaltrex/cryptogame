@@ -1,0 +1,177 @@
+@import "./assets/scss/app";
+
+.referralsFirst {
+
+  .inner {
+    box-sizing: border-box;
+    padding-top: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+      padding-top: 58px;
+      width: 1160px;
+      margin-left: auto;
+      margin-right: auto;
+
+      flex-direction: row;
+    }
+
+    .invitedBlockWrapper {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 50px;
+
+      @include desktop {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0;
+      }
+
+      .invitedBlock {
+        .bottom {
+          .accountBlock {
+            width: calc(100vw - 70px);
+
+            @include desktop {
+              width: 310px;
+            }
+          }
+        }
+      }
+    }
+
+
+    .tabsWrapper {
+      position: relative;
+      //border: 1px solid #FFF;
+      width: 100%;
+      //background: rgba(255, 255, 255, 0.1);
+
+      @include desktop {
+        flex-shrink: 0;
+        width: 765px;
+        margin-left: 40px;
+      }
+
+      .back {
+        @include onlyDesktop;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+      }
+
+      .menu {
+        position: relative;
+        z-index: 2;
+        height: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background: rgba(127, 133, 178, 0.13);
+        border-top: 1px solid rgba(127, 133, 178, 0.13);
+        border-bottom: 1px solid rgba(127, 133, 178, 0.13);
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        @include desktop {
+          height: auto;
+          padding: 15px 0 0;
+          background: transparent;
+          border: none;
+          display: flex;
+        }
+
+        .item {
+          @include centerColumn;
+          cursor: pointer;
+          user-select: none;
+          text-align: center;
+          color: #83848E;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+
+          @include desktop {
+            width: 80px;
+          }
+
+          &_selected {
+            color: #FFF;
+
+            span {
+              border-bottom: 1px solid #FFF;
+            }
+          }
+        }
+
+
+      }
+
+      .values {
+        @include container;
+        position: relative;
+        z-index: 2;
+        margin-top: 30px;
+
+        .valuesInner {
+          background: rgba(127, 133, 178, 0.05);
+          border-radius: 15px;
+          border: 1px solid rgba(181, 207, 204, 0.17);
+          padding: 0px 35px;
+
+          @include desktop {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: none;
+            border: none;
+            padding: 0;
+          }
+
+          .valuesItem {
+            height: 110px;
+            @include centerColumn;
+
+            @include desktop {
+              height: auto;
+            }
+
+            &:not(:first-child) {
+              border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+              @include desktop {
+                border-top: none;
+                border-left: 1px solid rgba(255, 255, 255, 0.14);
+            }
+
+          }
+
+
+          .value {
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 42px;
+
+            @include desktop {
+              font-size: 44px;
+              line-height: 66px;
+            }
+          }
+
+          .text {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 21px;
+          }
+        }
+
+      }
+    }
+
+  }
+
+}
+
+}

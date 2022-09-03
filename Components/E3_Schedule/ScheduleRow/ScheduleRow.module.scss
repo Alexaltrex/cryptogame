@@ -1,0 +1,113 @@
+@import "./assets/scss/app";
+
+.scheduleRow {
+  cursor: pointer;
+  position: relative;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 10px;
+  background: rgba(127, 133, 178, 0.05);
+
+  @include desktop {
+    height: 80px;
+    padding: 0px 35px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+  &:hover {
+    background: #1E2037;
+
+    @include desktop {
+      &:before {
+        content: "";
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: #644CC5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 2px 2px 0px;
+      }
+    }
+  }
+
+  &_selected {
+    background: linear-gradient(90deg, rgba(100, 76, 197, 0.83) -182.23%, rgba(100, 76, 197, 0.03) 98.84%);
+
+    &:hover {
+      background: linear-gradient(90deg, rgba(100, 76, 197, 0.83) -182.23%, rgba(100, 76, 197, 0.03) 98.84%);
+    }
+  }
+
+  &:first-child {
+
+    @include desktop {
+      border-top: 1px solid rgba(181, 207, 204, 0.17);
+    }
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid rgba(181, 207, 204, 0.17);
+  }
+
+  .cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:nth-child(2), &:nth-child(4) {
+      align-items: flex-end;
+
+      @include desktop {
+        align-items: normal;
+      }
+    }
+
+    .label {
+      @include onlyMobile;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #83848E;
+    }
+
+
+    .value {
+      display: flex;
+      align-items: center;
+
+      &_disable p {
+        color: #83848E;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+
+        @include desktop {
+          font-size: 18px;
+          line-height: 27px;
+        }
+      }
+
+      svg {
+        margin-left: 4px;
+        width: 10px;
+        height: 10px;
+
+        @include desktop {
+          margin-left: 6px;
+          width: 13px;
+          height: 13px;
+        }
+      }
+    }
+
+  }
+}

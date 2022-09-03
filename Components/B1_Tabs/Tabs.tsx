@@ -4,8 +4,6 @@ import {useState} from "react";
 import {tabsItems} from "./tabsItems";
 import clsx from "clsx";
 
-
-
 export const Tabs = () => {
     const [selected, setSelected] = useState('Total');
 

@@ -1,0 +1,34 @@
+@import "./assets/scss/app";
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(217,217,217,0.1);
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: #FFF;
+  }
+
+  &_half {
+    &::after {
+      width: 50%;
+    }
+  }
+
+  &_full {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+

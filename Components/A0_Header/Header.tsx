@@ -5,15 +5,24 @@ import {ButtonCustom} from "../X_Common/ButtonCustom/ButtonCustom";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../store/useStore";
 import {svgIcons} from "../../assets/svgIcons";
+import clsx from "clsx";
+import {useRouter} from "next/router";
+import {AccountBlock} from "./AccountBlock/Account";
 
 export const headerLinks = [
     {label: "How it works?", href: "howItWorks"},
     {label: "Promo", href: "promo"},
 ]
 
-export const Header = observer(() => {
-    const {burgerMenu, setBurgerMenu} = useStore();
+export const authHeaderLinks = [
+    {label: "Dashboard", href: "dashboard"},
+    {label: "Referrals", href: "referrals"},
+    {label: "Support", href: "support"},
+]
 
+export const Header = observer(() => {
+    const {burgerMenu, setBurgerMenu, login, setConnectWallet} = useStore();
+    const router = useRouter();
     return (
         <header className={style.header}>
             <div className={style.inner}>
@@ -28,9 +37,12 @@ export const Header = observer(() => {
 
                 <div className={style.center}>
                     {
-                        headerLinks.map(({label, href}, index) => (
+                        (login ? authHeaderLinks : headerLinks).map(({label, href}, index) => (
                             <Link key={index} href={href}>
-                                <a className={style.link}>
+                                <a className={clsx({
+                                    [style.link]: true,
+                                    [style.link_active]: router.pathname.includes(href),
+                                })}>
                                     {label}
                                 </a>
                             </Link>
@@ -39,11 +51,18 @@ export const Header = observer(() => {
                 </div>
 
                 <div className={style.right}>
-                    <ButtonCustom label="Let’s Start"
-                                  className={style.btn}
-                                  //disabled
-                                  onClick={() => console.log("click")}
-                    />
+
+                    {
+                        login ? (
+                            <AccountBlock/>
+                            ) : (
+                            <ButtonCustom label="Let’s Start"
+                                          className={style.btn}
+                                          onClick={() => setConnectWallet(true)}
+                            />
+                        )
+                    }
+
 
                     <button className={style.burgerBtn}
                             onClick={() => setBurgerMenu(!burgerMenu)}

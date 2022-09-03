@@ -8,12 +8,14 @@ import {Table} from "../Components/B6_Table/Table";
 import {HowToStart} from "../Components/B7_HowToStart/HowToStart";
 import {WeAreReliable} from "../Components/B8_WeAreReliable/WeAreReliable";
 import {ConnectToUs} from "../Components/B9_ConnectToUs/ConnectToUs";
+import {Timer} from "../Components/B3_Timer/Timer";
 
 const Home: NextPage = () => {
     return (
         <MainLayout>
             <TheFirst/>
             <Tabs/>
+            <Timer/>
             <UniqueNFT/>
             <TopPlayers/>
             <Table/>

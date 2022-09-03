@@ -1,0 +1,103 @@
+@import "./assets/scss/app";
+
+.yourReferrals {
+  @include container;
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  @include desktop {
+    padding-bottom: 100px;
+  }
+
+  .inner {
+    @include inner;
+
+    .table {
+      position: relative;
+      margin-top: 50px;
+      background: rgba(127, 133, 178, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(181, 207, 204, 0.17);
+
+      @include desktop {
+        margin-top: 30px;
+      }
+
+      .label {
+        @include centerRow;
+        position: absolute;
+        z-index: 2;
+        top: -27px;
+        right: -8px;
+        width: 123.67px;
+        height: 30.29px;
+        background: #644CC5;
+        box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.4);
+        border-radius: 44px;
+        transform: rotate(9deg);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+
+        @include desktop {
+          transform: rotate(30deg);
+          width: 151.53px;
+          height: 36px;
+          top: 0px;
+          right: -44px;
+          font-size: 16px;
+          line-height: 24px;
+        }
+
+      }
+
+      .head {
+        position: relative;
+        z-index: 1;
+        @include onlyDesktop(grid);
+        padding: 0px 40px;
+        height: 80px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-row-gap: 0px;
+
+        .headCell {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #83848E;
+          display: flex;
+          align-items: center;
+        }
+      }
+
+
+      .table_mobile {
+        @include onlyMobile;
+      }
+
+      .table_desktop {
+        @include onlyDesktop;
+      }
+
+    }
+
+    .loadBtn {
+      @include button;
+      display: block;
+      color: #FFF;
+      border-bottom: 1px solid #FFF;
+      margin: 20px auto 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 25px;
+
+      @include desktop {
+        margin: 40px auto 0;
+        font-size: 14px;
+      }
+
+    }
+
+  }
+}

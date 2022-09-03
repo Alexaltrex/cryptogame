@@ -29,12 +29,10 @@
     }
 
     .title {
-
       @include desktop {
         width: 442px;
         text-align: left;
       }
-
     }
 
     .btn {

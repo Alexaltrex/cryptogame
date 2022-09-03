@@ -4,6 +4,8 @@ import style from "./MainLayout.module.scss"
 import {Header} from "../../Components/A0_Header/Header";
 import {BurgerMenu} from "../../Components/A1_BurgerMenu/BurgerMenu";
 import {Footer} from "../../Components/A2_Footer/Footer";
+import {ConnectWallet} from "../../Components/A3_ConnectWallet/ConnectWallet";
+import {OpenLevel} from "../../Components/A4_OpenLevel/OpenLevel";
 
 interface IMainLayout {
     children: ReactNode
@@ -24,6 +26,9 @@ export const MainLayout: FC<IMainLayout> = ({
                     {headTitle}
                 </title>
             </Head>
+
+            <ConnectWallet/>
+            <OpenLevel/>
 
             <Header/>
             <BurgerMenu/>

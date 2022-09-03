@@ -1,0 +1,39 @@
+@import "./assets/scss/app";
+
+.levels {
+  @include container;
+  padding-top: 70px;
+
+  .inner {
+    @include inner;
+
+    .cards {
+      background: rgba(127, 133, 178, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(181, 207, 204, 0.17);
+      margin-top: 30px;
+      padding: 44px 20px;
+
+      @include desktop {
+        padding: 44px 30px;
+      }
+
+      .cards_mobile {
+        @include onlyMobile(grid);
+        grid-template-rows: repeat(6, 1fr);
+        grid-row-gap: 44px;
+      }
+
+      .cards_desktop {
+        @include onlyDesktop(grid);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        grid-row-gap: 54px;
+        grid-column-gap: 25px;
+      }
+
+    }
+
+
+  }
+}

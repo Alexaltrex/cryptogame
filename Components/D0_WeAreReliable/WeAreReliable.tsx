@@ -1,7 +1,9 @@
 import style from "./WeAreReliable.module.scss"
 import {svgIcons} from "../../assets/svgIcons";
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import {ButtonOutlined} from "../X_Common/ButtonOutlined/ButtonOutlined";
+import {ButtonCustom} from "../X_Common/ButtonCustom/ButtonCustom";
+import {LangSelector} from "../X_Common/LangSelector/LangSelector";
 
 const account = "0x41eaD2756aDEawdas122SF41eaD2756aDEawdas122SF"
 
@@ -12,6 +14,10 @@ export const WeAreReliable = () => {
         // ref.current.select();
         // document.execCommand('copy');
     }
+
+    const [lang, setLang] = useState('EN')
+
+
     return (
         <div className={style.weAreReliable}>
             <div className={style.inner}>
@@ -40,11 +46,19 @@ export const WeAreReliable = () => {
                     <div className={style.downloadBlock}>
                         <p className={style.text}>Presentation and Brandbook:</p>
                         <div className={style.selectAndButton}>
-                            <ButtonOutlined label="Download Promo"
-                                            icon={svgIcons.download}
-                                            className={style.downloadBtn}
-                                            animateIcon={false}
+
+                            <LangSelector lang={lang}
+                                          setLang={(lang: string) =>  setLang(lang)}
                             />
+
+                            <ButtonCustom label="Download Promo"
+                                icon={svgIcons.download}
+                                className={style.downloadBtn}
+                                animateIcon={false}
+
+                            />
+
+
                         </div>
                     </div>
 

@@ -1,0 +1,109 @@
+@import "./assets/scss/app";
+
+.openLevel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+
+  &_show {
+    @include centerColumn;
+  }
+
+  .inner {
+    position: relative;
+    background: #191C2E;
+    border-radius: 15px;
+    border: 1px solid rgba(181, 207, 204, 0.17);
+    width: calc(100vw - 40px);
+    padding: 52px 20px 30px;
+    box-sizing: border-box;
+
+    @include desktop {
+      width: 438px;
+      padding: 50px 25px 40px;
+    }
+
+    .closeBtn {
+      @include button;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+      text-align: center;
+
+      @include desktop {
+        font-size: 32px;
+      }
+    }
+
+    .text {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 160%;
+      text-align: center;
+      margin-top: 14px;
+
+      @include desktop {
+        margin-top: 20px;
+      }
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .btns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 12px;
+      margin-top: 23px;
+
+      @include desktop {
+        grid-column-gap: 16px;
+        margin-top: 30px;
+      }
+
+      button {
+        @include button;
+        @include centerColumn;
+        height: 44px;
+        border-radius: 999px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #FFF;
+        transition: 0.3s;
+
+        &:nth-child(1) {
+          border: 1px solid #454758;
+
+          &:hover {
+            border: 1px solid #CACBD6;
+          }
+        }
+
+        &:nth-child(2) {
+          background: #745BD7;
+
+          &:hover {
+            background: #624eba;
+          }
+        }
+
+      }
+
+    }
+
+
+  }
+}

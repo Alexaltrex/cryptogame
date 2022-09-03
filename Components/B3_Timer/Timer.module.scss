@@ -1,0 +1,145 @@
+@import "./assets/scss/app";
+
+.timer {
+  @include container;
+  padding-top: 70px;
+
+  @include desktop {
+    padding-top: 150px;
+  }
+
+  .inner {
+    @include inner;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      @include desktop {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .blocks {
+      position: relative;
+      @include centerRow;
+      margin-top: 104px;
+
+      @include desktop {
+        margin-top: 70px;
+      }
+
+      .arrow_access_mobile {
+        @include onlyMobile;
+        position: absolute;
+        left: calc(50% + 95px);
+        top: -95px;
+      }
+
+      .arrow_access_desktop {
+        @include onlyDesktop;
+        position: absolute;
+        left: calc(50% + 272px);
+        top: -95px;
+      }
+
+      .level {
+        @include centerRow;
+        position: absolute;
+        z-index: 5;
+        top: -60px;
+        left: calc(50% - 37px);
+        width: 77px;
+        height: 28px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        background: #644CC5;
+        box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.4);
+        border-radius: 44px;
+
+        @include desktop {
+          width: 91px;
+          height: 36px;
+          font-size: 16px;
+          line-height: 24px;
+          transform: rotate(30deg);
+          top: -13px;
+          left: auto;
+          right: -29px
+        }
+      }
+
+      .divider1 {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 60px;
+        position: absolute;
+        top: 23px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include desktop {
+          font-size: 70px;
+          line-height: 105px;
+          transform: translateX(0%);
+          top: 37px;
+          left: 220px;
+        }
+      }
+
+      .divider2 {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 60px;
+        position: absolute;
+        top: 162px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @include desktop {
+          font-size: 70px;
+          line-height: 105px;
+          transform: translateX(0%);
+          top: 37px;
+          left: auto;
+          right: 220px;
+        }
+      }
+
+      .divider3 {
+        @include onlyDesktop;
+        position: absolute;
+        font-weight: 500;
+        font-size: 70px;
+        line-height: 105px;
+        transform: translateX(-50%);
+        top: 37px;
+        left: 50%;
+      }
+
+      .inner {
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 128px);
+        grid-template-rows: repeat(2, 116px);
+        grid-row-gap: 24px;
+        grid-column-gap: 21px;
+
+        @include desktop {
+          width: calc(4 * 208px + 3 * 40px);
+          grid-template-columns: repeat(4, 208px);
+          grid-template-rows: repeat(1, 1fr);
+          grid-row-gap: 0;
+          grid-column-gap: 40px;
+        }
+
+
+      }
+    }
+  }
+
+}

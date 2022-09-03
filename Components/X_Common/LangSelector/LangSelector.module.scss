@@ -1,0 +1,94 @@
+@import "./assets/scss/app";
+
+.langSelector {
+  position: relative;
+  cursor: pointer;
+  border: 1px solid #515369;
+  box-sizing: border-box;
+  padding: 0px 15px;
+  border-radius: 999px;
+  height: 46px;
+  width: 88px;
+  transition: 0.3s;
+
+  @include desktop {
+    height: 50px;
+    width: 104px;
+  }
+
+  &_hover {
+    border: 1px solid #9d9db1;
+  }
+
+  .inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .left {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+      .flag {
+        display: block;
+        width: 15px;
+        height: 15px;
+      }
+
+      .lang {
+        margin-left: 5px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+
+        @include desktop {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .arrowIcon {
+      svg {
+        transition: 0.3s;
+      }
+    }
+
+  }
+
+  .list {
+    padding: 5px 0px;
+    background: #FFF;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 666;
+    left: 0;
+    bottom: -5px;
+    transform: translateY(100%);
+    width: 100%;
+    box-sizing: border-box;
+
+    .item {
+      padding: 2px 15px;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      transition: 0.3s;
+
+      .lang {
+        margin-left: 5px;
+        color: #000;
+      }
+
+      &:hover {
+        background: #CCC;
+      }
+    }
+
+  }
+
+
+}

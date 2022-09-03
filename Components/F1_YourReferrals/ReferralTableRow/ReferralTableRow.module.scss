@@ -1,0 +1,121 @@
+@import "./assets/scss/app";
+
+.referralTableRow {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 10px;
+
+  @include desktop {
+    padding: 0px 40px;
+    height: 80px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-row-gap: 0px;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid #2D3242;
+  }
+
+  &:first-child {
+    @include desktop {
+      border-top: 1px solid #2D3242;
+    }
+  }
+
+  .cell {
+    display: flex;
+    flex-direction: column;
+
+    &:nth-child(2), &:nth-child(4) {
+      align-items: flex-end;
+
+      @include desktop {
+        align-items: center;
+      }
+    }
+
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &:nth-child(4) {
+      @include desktop {
+        justify-content: space-between;
+      }
+
+    }
+
+    .label {
+      @include onlyMobile;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #83848E;
+    }
+
+    .balance {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 10px;
+        height: 10px;
+        margin-left: 4px;
+
+        @include desktop {
+          width: 13px;
+          height: 13px;
+          margin-left: 6px;
+        }
+      }
+    }
+
+    .value {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+
+      @include desktop {
+        font-size: 18px;
+        line-height: 27px;
+      }
+
+      span {
+        color: #83848E;
+      }
+    }
+
+    .date {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      @include desktop {
+        justify-content: space-between;
+      }
+
+      .link {
+        @include onlyDesktop(flex);
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center;
+        background: #272A3B;
+        border-radius: 5px;
+        border: 1px solid rgba(181, 207, 204, 0.17);
+
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+
+  }
+
+}

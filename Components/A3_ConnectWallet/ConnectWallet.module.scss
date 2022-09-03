@@ -1,0 +1,162 @@
+@import "./assets/scss/app";
+
+.connectWallet {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.4);
+
+
+  &_show {
+    @include centerColumn;
+  }
+
+  .inner {
+    position: relative;
+    background: #191C2E;
+    border-radius: 15px;
+    border: 1px solid rgba(181, 207, 204, 0.17);
+    width: calc(100vw - 40px);
+    padding: 52px 15px 25px;
+    box-sizing: border-box;
+
+    @include desktop {
+      width: 456px;
+      padding: 50px 35px 30px;
+    }
+
+    .closeBtn {
+      @include button;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+      text-align: center;
+
+      @include desktop {
+        font-size: 32px;
+      }
+    }
+
+    .wallets {
+      margin-top: 20px;
+
+      @include desktop {
+        margin-top: 30px;
+      }
+
+      .walletItem {
+        background: rgba(127, 133, 178, 0.05);
+        border-radius: 10px;
+        border: 1px solid rgba(181, 207, 204, 0.17);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 65px;
+        padding: 0 10px;
+
+        @include desktop {
+          height: 70px;
+          padding: 0 12px;
+        }
+
+        &:not(:first-child) {
+          margin-top: 14px;
+
+          @include desktop {
+            margin-top: 12px;
+          }
+        }
+
+        .leftBlock {
+          display: flex;
+          align-items: center;
+
+          .icon {
+            width: 20px;
+            height: 20px;
+
+            @include desktop {
+              width: 24px;
+              height: 24px;
+            }
+
+            svg {
+              width: 20px;
+              height: 20px;
+
+              @include desktop {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+
+          .texts {
+            margin-left: 15px;
+
+            @include desktop {
+              margin-left: 17px;
+            }
+
+            .walletTitle {
+              font-weight: 500;
+              font-size: 14px;
+              line-height: 150%;
+
+              @include desktop {
+                font-size: 18px;
+              }
+            }
+
+            .description {
+              margin-top: 2px;
+              font-weight: 300;
+              font-size: 10px;
+              line-height: 15px;
+              color: #D0D0D0;
+
+              @include desktop {
+                margin-top: 1px;
+                font-size: 12px;
+                line-height: 18px;
+              }
+            }
+          }
+
+        }
+
+
+        .arrowBtn {
+          @include button;
+          @include centerColumn;
+          background: linear-gradient(262.44deg, #5036B9 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+          border-radius: 5px;
+          border: 1px solid rgba(181, 207, 204, 0.17);
+          width: 30px;
+          height: 45px;
+
+          @include desktop {
+            width: 42px;
+            height: 42px;
+          }
+
+        }
+
+      }
+
+
+    }
+
+
+  }
+}

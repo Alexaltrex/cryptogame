@@ -1,0 +1,135 @@
+@import "./assets/scss/app";
+
+.levelCard {
+  cursor: pointer;
+  position: relative;
+  background: rgba(127, 133, 178, 0.13);
+  border-radius: 15px;
+  border: 1px solid rgba(181, 207, 204, 0.17);
+
+  .level {
+    @include centerRow;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%, -50%);
+    width: 81px;
+    height: 27px;
+    background: #272A3B;
+    border-radius: 15px;
+    border: 1px solid rgba(181, 207, 204, 0.17);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.2);
+
+    &_blocked {
+      color: #FFF;
+    }
+
+    &_active {
+      background: #644CC5;
+      color: #FFF;
+    }
+  }
+
+
+  .top {
+    position: relative;
+    z-index: 1;
+    padding: 30px 15px 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 20px;
+
+    @include desktop {
+      padding: 30px 15px 20px;
+    }
+
+    .block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .label {
+        white-space: nowrap;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 18px;
+        color: #83848E;
+
+        &_dashed {
+          border-bottom: 1px dashed #83848E;
+        }
+      }
+
+      .value {
+        margin-top: 4px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+
+        &_active {
+          color: #01E6BC;
+        }
+
+        &_blocked {
+          color: #F44A5F;
+        }
+      }
+
+      .dots {
+        margin-top: 10px;
+        display: flex;
+
+        .dot {
+          &:not(:first-child) {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    @include centerRow;
+    position: relative;
+    height: 52px;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    color: #83848E;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(104.43deg, rgba(181, 207, 204, 0.17) 12.87%, rgba(181, 207, 204, 0) 94.67%);
+    }
+
+    &_blocked {
+      color: rgba(255,255,255,0.8);
+      background: #D03D4E;
+    }
+
+    &_active {
+      background: linear-gradient(262.44deg, #5036B9 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+      color: #FFF;
+      svg {
+        margin-left: 5px;
+      }
+    }
+
+
+  }
+}

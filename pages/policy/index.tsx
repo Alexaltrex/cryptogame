@@ -10,7 +10,7 @@ const text3 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do e
 
 const Policy = () => {
     return (
-        <MainLayout>
+        <MainLayout headTitle='Crypto Game | Privacy Policy'>
             <div className={style.policy}>
                 <div className={style.inner}>
                     <div className={style.block}>

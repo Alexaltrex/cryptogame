@@ -1,0 +1,96 @@
+@import "./assets/scss/app";
+
+.schedule {
+  @include container;
+  padding-top: 70px;
+
+  .inner {
+    @include inner;
+
+    .table {
+      position: relative;
+      margin-top: 47px;
+      border-radius: 15px;
+      border: 1px solid rgba(181, 207, 204, 0.17);
+
+      @include desktop {
+        margin-top: 30px;
+      }
+
+      .label {
+        @include centerRow;
+        background: #644CC5;
+        box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.4);
+        border-radius: 44px;
+        position: absolute;
+        z-index: 2;
+        top: -25px;
+        right: -20px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: #FFFFFF;
+        width: 105.85px;
+        height: 29.22px;
+        transform: rotate(15deg);
+
+        @include desktop {
+          top: -20px;
+          right: -55px;
+          transform: rotate(30deg);
+          font-size: 16px;
+          line-height: 24px;
+          width: 144.66px;
+          height: 36px;
+        }
+      }
+
+      .head {
+        @include onlyDesktop(grid);
+        height: 80px;
+        padding: 0px 35px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+
+        .headCell {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+          color: #83848E;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      .table_mobile {
+        @include onlyMobile();
+        position: relative;
+        z-index: 1;
+      }
+
+      .table_desktop {
+        @include onlyDesktop();
+        position: relative;
+        z-index: 1;
+      }
+
+    }
+
+    .loadBtn {
+      @include onlyMobile();
+      @include button;
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 25px;
+      border-bottom: 1px solid #FFF;
+      color: #FFF;
+      margin-left: auto;
+      margin-right: auto;
+
+
+    }
+
+  }
+}
