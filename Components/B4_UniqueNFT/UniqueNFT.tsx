@@ -7,16 +7,25 @@ import {svgIcons} from "../../assets/svgIcons";
 export const UniqueNFT = () => {
     return (
         <div className={style.uniqueNFT}>
+
             <div className={style.inner}>
-                <H2 className={style.title}>Unique NFT’s for regular players</H2>
-                <ButtonOutlined label="Get your first gift"
-                                className={style.btn}
-                />
-                <div className={style.arrow4}>
-                    {svgIcons.arrow4}
+                <img src="/png/unique nft/bgr_mobile.png" alt="" className={style.bgr_mobile}/>
+                <img src="/png/unique nft/bgr_desktop.png" alt="" className={style.bgr_desktop}/>
+
+                <div className={style.content}>
+                    <H2 className={style.title}>Unique NFT’s for regular players</H2>
+                    <ButtonOutlined label="Get your first gift"
+                                    className={style.btn}
+                    />
+                    <div className={style.arrow4}>
+                        {svgIcons.arrow4}
+                    </div>
+                    <img src="/png/unique nft/nft.png" alt="" className={style.nft}/>
+                    <img src="/png/unique nft/cards.png" alt="" className={style.cards}/>
                 </div>
-                <img src="/png/unique nft/nft.png" alt="" className={style.nft}/>
-                <img src="/png/unique nft/cards.png" alt="" className={style.cards}/>
+
+
+
             </div>
         </div>
     )
