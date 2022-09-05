@@ -91,6 +91,8 @@
         position: absolute;
         bottom: -321px;
         left: -200px;
+        width: 266px;
+        //height: 158.89px;
       }
 
       .img4Desktop {
@@ -98,6 +100,7 @@
         position: absolute;
         bottom: -321px;
         right: -153px;
+        width: 195px;
       }
 
       .arrow1 {
@@ -189,6 +192,11 @@
 
       img {
         display: block;
+        height: 91px;
+
+        &:nth-child(1) {
+          height: 106px;
+        }
 
         &:not(:first-child) {
           margin-left: 10px;

@@ -42,12 +42,12 @@ export const TheFirst = () => {
                     >
                         {svgIcons.arrow2}
                     </div>
-                    <div className={style.img3Desktop}
+                    <img src="/png/the first/03_d.png"
+                         alt=""
+                         className={style.img3Desktop}
                          data-aos="zoom-in"
                          data-aos-delay={delays[3]}
-                    >
-                        {svgIcons.firstBlock_img3_desktop}
-                    </div>
+                    />
 
 
                     <div className={style.arrow3}
@@ -56,12 +56,12 @@ export const TheFirst = () => {
                     >
                         {svgIcons.arrow3}
                     </div>
-                    <div className={style.img4Desktop}
+                    <img src="/png/the first/04.png"
+                         alt=""
+                         className={style.img4Desktop}
                          data-aos="zoom-in"
                          data-aos-delay={delays[5]}
-                    >
-                        {svgIcons.firstBlock_img4_desktop}
-                    </div>
+                    />
 
 
                 </div>
