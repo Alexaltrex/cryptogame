@@ -7,7 +7,7 @@
   box-sizing: border-box;
   padding-bottom: 466px;
 
-  overflow: hidden;
+  //overflow: hidden;
 
   @include desktop {
     padding-bottom: 183px;
@@ -19,6 +19,7 @@
   }
 
   .BallsFromMainPage {
+    overflow: hidden;
     @include onlyDesktop();
     position: absolute;
     z-index: 1;

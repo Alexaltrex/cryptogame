@@ -7,9 +7,6 @@ import {contentLinks} from "../HowItWorks";
 import clsx from "clsx";
 import Link from "next/link";
 
-//contentLinks
-
-
 export const Navigation = observer(() => {
     const [open, setOpen] = useState(false);
     const {activeLink, setActiveLink} = useStore();
@@ -27,7 +24,7 @@ export const Navigation = observer(() => {
                     open ? (
                         <>
                             {
-                                contentLinks.map(link => (
+                                contentLinks.map((link) => (
                                     <Link href={`#${link}`} key={link}>
                                         <a className={clsx({
                                             [style.link]: true,

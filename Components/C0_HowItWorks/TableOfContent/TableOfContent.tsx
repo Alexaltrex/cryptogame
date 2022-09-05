@@ -16,8 +16,8 @@ export const TableOfContent = observer(() => {
             </div>
             <div className={style.links}>
                 {
-                    contentLinks.map(link => (
-                        <Link href={`#${link}`} key={link}>
+                    contentLinks.map((link, index) => (
+                        <Link href={`/howItWorks#${link}`} key={index}>
                             <a className={clsx({
                                 [style.link]: true,
                                 [style.link_active]: link === activeLink,

@@ -10,14 +10,14 @@ import {useRouter} from "next/router";
 import {AccountBlock} from "./AccountBlock/Account";
 
 export const headerLinks = [
-    {label: "How it works?", href: "howItWorks"},
-    {label: "Promo", href: "promo"},
+    {label: "How it works?", href: "/howItWorks"},
+    {label: "Promo", href: "/promo"},
 ]
 
 export const authHeaderLinks = [
-    {label: "Dashboard", href: "dashboard"},
-    {label: "Referrals", href: "referrals"},
-    {label: "Support", href: "support"},
+    {label: "Dashboard", href: "/dashboard"},
+    {label: "Referrals", href: "/referrals"},
+    {label: "Support", href: "/support"},
 ]
 
 export const Header = observer(() => {
