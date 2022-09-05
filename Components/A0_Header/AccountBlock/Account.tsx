@@ -2,9 +2,13 @@ import style from "./AccountBlock.module.scss"
 import {svgIcons} from "../../../assets/svgIcons";
 import clsx from "clsx";
 import {useRef, useState} from "react";
-import {useOutsideClick} from "../../../hooks/useOutsideClick";
+//import {useOutsideClick} from "../../../hooks/useOutsideClick";
+import {observer} from "mobx-react-lite";
+import {useStore} from "../../../store/useStore";
 
-export const AccountBlock = () => {
+export const AccountBlock = observer(() => {
+    const {setLogin} = useStore();
+
     const balance = "32.221";
     const account = "0x77997970C51812dc3A010C7d01b50e0d17dc79C8";
 
@@ -20,7 +24,7 @@ export const AccountBlock = () => {
     const list = [
         {icon: svgIcons.copy, label: "Copy Address", onClick: () => navigator.clipboard.writeText(account) },
         {icon: svgIcons.link, label: "View Explorer", onClick: () => {}},
-        {icon: svgIcons.logout, label: "Disconnect Wallet", onClick: () => {}},
+        {icon: svgIcons.logout, label: "Disconnect Wallet", onClick: () => setLogin(false)},
     ]
 
     return (
@@ -63,4 +67,4 @@ export const AccountBlock = () => {
             </button>
         </div>
     )
-}
+})

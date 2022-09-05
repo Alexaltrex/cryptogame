@@ -27,6 +27,7 @@
       }
 
       .title {
+        position: relative;
         font-weight: 600;
         font-size: 34px;
         line-height: 110%;
@@ -38,6 +39,33 @@
 
         span:nth-child(2) {
           color: #8A6DFD;
+        }
+
+        .label {
+          @include centerRow;
+          position: absolute;
+          background: #644CC5;
+          box-shadow: 2px 8px 30px rgba(0, 0, 0, 0.4);
+          border-radius: 44px;
+          width: 106px;
+          height: 26px;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+          transform: rotate(-10deg);
+          left: -52px;
+          top: -18px;
+
+          @include desktop {
+            font-size: 14px;
+            line-height: 21px;
+            transform: rotate(15deg);
+            left: auto;
+            right: 5px;
+            top: -7px;
+            width: 125.86px;
+            height: 33px;
+          }
         }
       }
 
@@ -54,6 +82,8 @@
         position: absolute;
         top: 13px;
         left: -200px;
+        width: 178.69px;
+        height: 101.19px;
       }
 
       .img3Desktop {

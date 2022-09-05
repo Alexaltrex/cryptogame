@@ -100,6 +100,125 @@
   }
 }
 
+.sliderWrapper {
+  //width: 100%;
+  position: relative;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    margin-top: 40px;
+    width: 560px;
+  }
+
+  .labelSlider {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 167px;
+    height: 36px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+
+    .labelSlide {
+      @include centerColumn;
+      background: #644CC5;
+      border-radius: 44px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+
+
+  .slider {
+    position: relative;
+    z-index: 1;
+
+    @include desktop {
+      margin-left: 0;
+      margin-right: 0;
+      width: 560px;
+    }
+
+    .slide {
+      @include centerColumn;
+
+      img {
+        border-radius: 17px;
+
+        max-width: 560px;
+        width: 100%;
+        //height: 193px;
+
+        @include desktop {
+          border-radius: 17px;
+          width: 560px;
+          height: 384px;
+        }
+      }
+    }
+  }
+
+  .btns {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    margin-top: 20px;
+    align-self: center;
+
+    @include desktop {
+      margin-top: 0;
+      position: absolute;
+      top: 10px;
+      left: 475px;
+    }
+
+    button {
+      @include button;
+      @include centerColumn;
+      width: 34px;
+      height: 34px;
+
+      @include desktop {
+        width: 34px;
+        height: 34px;
+      }
+
+      &:nth-child(1) {
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:nth-child(2) {
+        margin-left: 10px;
+
+        @include desktop {
+          margin-left: 4px;
+        }
+      }
+
+      svg {
+        width: 17px;
+
+        @include desktop {
+          width: 12px;
+        }
+
+        path {
+          fill: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+}
+
+
 .tgLink {
   text-decoration: none;
   color: #FFF;
@@ -164,31 +283,31 @@
 }
 
 .table {
-   background: rgba(127, 133, 178, 0.05);
-   border-radius: 15px;
-   border: 1px solid rgba(181, 207, 204, 0.17);
-   margin-top: 30px;
+  background: rgba(127, 133, 178, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(181, 207, 204, 0.17);
+  margin-top: 30px;
 
-   @include desktop {
-     margin-top: 40px;
-   }
+  @include desktop {
+    margin-top: 40px;
+  }
 
-   .head {
-     @include onlyDesktop(grid);
-     padding: 0px 40px;
-     height: 80px;
-     grid-template-columns: repeat(4, 1fr);
+  .head {
+    @include onlyDesktop(grid);
+    padding: 0px 40px;
+    height: 80px;
+    grid-template-columns: repeat(4, 1fr);
 
-     .headCell {
-       font-weight: 400;
-       font-size: 16px;
-       line-height: 24px;
-       color: #83848E;
-       height: 100%;
-       display: flex;
-       align-items: center;
-     }
-   }
+    .headCell {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #83848E;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
 
   .row {
     padding: 15px;
@@ -257,7 +376,7 @@
       }
     }
   }
- }
+}
 
 .decorateText {
   margin-top: 30px;

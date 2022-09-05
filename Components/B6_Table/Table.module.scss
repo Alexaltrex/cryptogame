@@ -18,6 +18,9 @@
 
       .head {
         @include onlyDesktop(grid);
+        padding: 27px 40px;
+        grid-template-columns: repeat(6, 1fr);
+
 
         .label {
           font-weight: 400;
@@ -39,6 +42,16 @@
           grid-row-gap: 0;
           grid-template-columns: repeat(6, 1fr);
           grid-template-rows: repeat(1, 1fr);
+        }
+
+        &:first-child {
+          @include desktop {
+            border-top: 1px solid #2D3242;
+          }
+        }
+
+        &:not(:first-child) {
+          border-top: 1px solid #2D3242;
         }
 
         .cell {

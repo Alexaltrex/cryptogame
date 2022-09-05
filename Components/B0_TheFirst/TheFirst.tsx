@@ -15,13 +15,13 @@ export const TheFirst = () => {
                 <div className={style.titleWrapper}>
                     <h1 className={style.title}>
                         The first <span>BNB</span> game built on the pyramid
+                        <div className={style.label}
+                             data-aos="zoom-in"
+                        >
+                            Take a profit in
+                        </div>
                     </h1>
 
-                    <img src="/png/the first/01_d.png"
-                         alt=""
-                         className={style.img1Desktop}
-                         data-aos="zoom-in"
-                    />
 
                     <div className={style.arrow1}
                          data-aos="zoom-in"
@@ -42,12 +42,13 @@ export const TheFirst = () => {
                     >
                         {svgIcons.arrow2}
                     </div>
-                    <img src="/png/the first/03_d.png"
-                         alt=""
-                         className={style.img3Desktop}
+                    <div className={style.img3Desktop}
                          data-aos="zoom-in"
                          data-aos-delay={delays[3]}
-                    />
+                    >
+                        {svgIcons.firstBlock_img3_desktop}
+                    </div>
+
 
                     <div className={style.arrow3}
                          data-aos="zoom-in"
@@ -55,12 +56,12 @@ export const TheFirst = () => {
                     >
                         {svgIcons.arrow3}
                     </div>
-                    <img src="/png/the first/04_d.png"
-                         alt=""
-                         className={style.img4Desktop}
+                    <div className={style.img4Desktop}
                          data-aos="zoom-in"
                          data-aos-delay={delays[5]}
-                    />
+                    >
+                        {svgIcons.firstBlock_img4_desktop}
+                    </div>
 
 
                 </div>
@@ -83,13 +84,12 @@ export const TheFirst = () => {
                         How to play?
                     </a>
                 </Link>
-                
+
                 <div className={style.imgs}>
                     <img src="/png/the first/slide_0.png" alt=""/>
                     <img src="/png/the first/slide_1.png" alt=""/>
                     <img src="/png/the first/slide_2.png" alt=""/>
                 </div>
-
 
 
             </div>

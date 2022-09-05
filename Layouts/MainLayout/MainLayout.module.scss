@@ -1,3 +1,13 @@
+@import "./assets/scss/app";
+
 .mainLayout {
+  position: relative;
   background: #141627;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 466px;
+
+  @include desktop {
+    padding-bottom: 183px;
+  }
 }
