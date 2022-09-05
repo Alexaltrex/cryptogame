@@ -35,10 +35,10 @@ export const Schedule = () => {
                                 .map((row, index) => (
                                     <ScheduleRow key={index}
                                                  {...row}
-                                                 selected={
-                                                     //selectedIndex === index
-                                                     row.selected
-                                                 }
+                                                 // selected={
+                                                 //     //selectedIndex === index
+                                                 //     row.selected
+                                                 // }
                                                  //onClick={() => setSelectedIndex(index)}
                                     />
                                 ))
@@ -51,10 +51,10 @@ export const Schedule = () => {
                                 .map((row, index) => (
                                     <ScheduleRow key={index}
                                                  {...row}
-                                                 selected={
-                                                     //selectedIndex === index
-                                                     row.selected
-                                                 }
+                                                 // selected={
+                                                 //     //selectedIndex === index
+                                                 //     row.selected
+                                                 // }
                                                  //onClick={() => setSelectedIndex(index)}
                                     />
                                 ))

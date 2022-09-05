@@ -11,18 +11,18 @@ export const labels = [
     "Date",
 ]
 
-interface IScheduleRowComponent extends IScheduleRow {
-    selected: boolean
-    onClick: () => void
-}
+// interface IScheduleRowComponent extends IScheduleRow {
+//     selected: boolean
+//     onClick: () => void
+// }
 
-export const ScheduleRow: FC<IScheduleRowComponent> = ({selected, onClick, ...row}) => {
+export const ScheduleRow: FC<IScheduleRow> = (row) => {
     return (
         <div className={clsx({
             [style.scheduleRow]: true,
-            [style.scheduleRow_selected]: selected,
+            [style.scheduleRow_selected]: row.selected,
         })}
-             onClick={onClick}
+             //onClick={onClick}
         >
             {
                 Object.values(row).map((value, index) => (
