@@ -155,6 +155,12 @@
     margin-left: 10px;
   }
 
+  .copyBtn, .linkBtn {
+    svg path {
+      fill: #A496DD;
+    }
+  }
+
 }
 
 .table {

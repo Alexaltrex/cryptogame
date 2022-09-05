@@ -1,0 +1,138 @@
+@import "./assets/scss/app";
+
+.contactToUs {
+  .cards {
+    margin-top: 20px;
+
+    @include desktop {
+      margin-top: 30px;
+    }
+
+    .card {
+      background: rgba(127, 133, 178, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(181, 207, 204, 0.17);
+
+      &:nth-child(2) {
+        margin-top: 30px;
+
+        @include desktop {
+          margin-top: 40px;
+        }
+      }
+
+      @include desktop {
+        display: flex;
+        height: 214px;
+      }
+
+      &:nth-child(1) {
+        .arrowMobile {
+          @include onlyMobile();
+          top: 84px;
+          right: calc(50% - 98px);
+        }
+
+        .arrowDesktop {
+          @include onlyDesktop();
+          top: 41px;
+          left: 167px;
+        }
+      }
+
+      &:nth-child(2) {
+        .arrowMobile {
+          @include onlyMobile();
+          top: 84px;
+          right: calc(50% + 64px);
+        }
+
+        .arrowDesktop {
+          @include onlyDesktop();
+          top: 41px;
+          left: 167px;
+        }
+      }
+
+      .top {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0px 30px;
+
+        @include desktop {
+          flex-grow: 1;
+          align-items: normal;
+          padding: 24px 30px 20px;
+        }
+
+        .arrowMobile, .arrowDesktop {
+          position: absolute;
+        }
+
+        .logo {
+          width: 105px;
+
+          @include desktop {
+            width: 93px;
+          }
+        }
+
+        .title {
+          margin-top: 20px;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 27px;
+
+          @include desktop {
+            margin-top: 17px;
+            font-size: 24px;
+            line-height: 36px;
+          }
+        }
+
+        .description {
+          margin-top: 10px;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 21px;
+          text-align: center;
+          color: #D0D0D0;
+
+          @include desktop {
+            margin-top: 6px;
+            text-align: left;
+          }
+        }
+
+      }
+
+      .bottom {
+        @include centerRow;
+        height: 53px;
+        background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+        border-radius: 0px 0px 15px 15px;
+
+        @include desktop {
+          height: auto;
+          width: 100px;
+          border-radius: 0px 15px 15px 0px;
+        }
+
+        p {
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 27px;
+
+          @include desktop {
+            font-size: 28px;
+            line-height: 42px;
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+}

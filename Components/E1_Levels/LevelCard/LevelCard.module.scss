@@ -1,7 +1,6 @@
 @import "./assets/scss/app";
 
 .levelCard {
-  cursor: pointer;
   position: relative;
   background: rgba(127, 133, 178, 0.13);
   border-radius: 15px;
@@ -34,7 +33,6 @@
     }
   }
 
-
   .top {
     position: relative;
     z-index: 1;
@@ -53,6 +51,14 @@
       flex-direction: column;
       align-items: flex-start;
 
+      .tooltipWrapperMobile {
+        @include onlyMobile;
+      }
+
+      .tooltipWrapperDesktop {
+        @include onlyDesktop;
+      }
+
       .label {
         white-space: nowrap;
         font-weight: 300;
@@ -61,6 +67,7 @@
         color: #83848E;
 
         &_dashed {
+          cursor: pointer;
           border-bottom: 1px dashed #83848E;
         }
       }
@@ -94,6 +101,7 @@
   }
 
   .bottom {
+    cursor: pointer;
     @include centerRow;
     position: relative;
     height: 52px;
@@ -129,7 +137,44 @@
         margin-left: 5px;
       }
     }
-
-
   }
+}
+
+.tooltipBlock {
+  position: relative;
+  width: 193px;
+  background: #26293F;
+  border-radius: 7px;
+  border: 1px solid rgba(181, 207, 204, 0.17);
+  padding: 12px;
+  box-sizing: border-box;
+
+  .closeBtn {
+    @include onlyMobile;
+    @include button;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+
+    svg {
+      width: 13px;
+      height: 13px;
+    }
+  }
+
+  .tooltipTitle {
+    font-family: 'Poppins', sans-serif!important;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .tooltipText {
+    font-family: 'Poppins', sans-serif!important;
+    margin-top: 7px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
 }

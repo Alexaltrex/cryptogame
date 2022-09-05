@@ -1,19 +1,7 @@
 @import "./assets/scss/app";
 
 .connectWallet {
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  background: rgba(0, 0, 0, 0.4);
-
-
-  &_show {
-    @include centerColumn;
-  }
+  @include modal;
 
   .inner {
     position: relative;
@@ -63,6 +51,15 @@
         align-items: center;
         height: 65px;
         padding: 0 10px;
+        transition: 0.3s;
+
+        &:hover {
+          background: rgba(127, 133, 178, 0.13);
+
+          .arrowBtn {
+            background: linear-gradient(262.44deg, #4025AB -4.77%, rgba(82, 60, 167, 0.96) 105.76%);
+          }
+        }
 
         @include desktop {
           height: 70px;

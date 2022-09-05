@@ -9,27 +9,20 @@ body {
     color: #FFF;
 }
 
+/*==================================*/
+/* ============ BALL 1 ============ */
+/*==================================*/
 .animBall {
-    animation: 6s linear infinite movingMobile;
+    animation: 6s linear infinite movingBallMobile;
 }
 
 @media all and (min-width: 1240px) {
     .animBall {
-        animation: 6s linear infinite movingDesktop;
+        animation: 6s linear infinite movingBallDesktop;
     }
 }
 
-.animShadow {
-    animation: 6s linear infinite movingShadowMobile;
-}
-
-@media all and (min-width: 1240px) {
-    .animShadow {
-        animation: 6s linear infinite movingShadowDesktop;
-    }
-}
-
-@keyframes movingMobile {
+@keyframes movingBallMobile {
     0% {
         top: -3px;
         left: -3px;
@@ -52,7 +45,7 @@ body {
     }
 }
 
-@keyframes movingDesktop {
+@keyframes movingBallDesktop {
     0% {
         top: -4px;
         left: -4px;
@@ -72,6 +65,81 @@ body {
     100% {
         top: -4px;
         left: -4px;
+    }
+}
+
+/*==================================*/
+/* ============ BALL 2 ============ */
+/*==================================*/
+@media all and (min-width: 1240px) {
+    .animBall2 {
+        animation: 6s linear infinite movingBallDesktop2;
+    }
+}
+
+@keyframes movingBallDesktop2 {
+    0% {
+        top: -4px;
+        left: -4px;
+    }
+    25% {
+        top: -4px;
+        left: 137px;
+    }
+    50% {
+        top: 134px;
+        left: 137px;
+    }
+    75% {
+        top: 134px;
+        left: -4px;
+    }
+    100% {
+        top: -4px;
+        left: -4px;
+    }
+}
+
+/*==================================*/
+/* ============ BALL 3 ============ */
+/*==================================*/
+.animBall3 {
+        animation: 6s linear infinite movingBall3;
+}
+
+@keyframes movingBall3 {
+    0% {
+        top: -4px;
+        left: -4px;
+    }
+    34% {
+        top: -4px;
+        left: 266px;
+    }
+    50% {
+        top: 102px;
+        left: 266px;
+    }
+    84% {
+        top: 102px;
+        left: -4px;
+    }
+    100% {
+        top: -4px;
+        left: -4px;
+    }
+}
+
+/*===================================*/
+/*============ Shadow 1 =============*/
+/*===================================*/
+.animShadow {
+    animation: 6s linear infinite movingShadowMobile;
+}
+
+@media all and (min-width: 1240px) {
+    .animShadow {
+        animation: 6s linear infinite movingShadowDesktop;
     }
 }
 
@@ -151,6 +219,108 @@ body {
     }
     76% {
         top: 180px;
+        left: 4px;
+        transform: rotate(270deg);
+    }
+    100% {
+        top: 2px;
+        left: 4px;
+        transform: rotate(270deg);
+    }
+}
+
+/*===================================*/
+/*============ Shadow 2 =============*/
+/*===================================*/
+@media all and (min-width: 1240px) {
+    .animShadow2 {
+        animation: 6s linear infinite movingShadowDesktop2;
+    }
+}
+
+@keyframes movingShadowDesktop2 {
+    0% {
+        top: 2px;
+        left: 4px;
+        transform: rotate(0deg);
+    }
+    25% {
+        top: 2px;
+        left: 144px;
+        transform: rotate(0deg);
+    }
+    26% {
+        top: 2px;
+        left: 144px;
+        transform: rotate(90deg);
+    }
+    50% {
+        top: 140px;
+        left: 144px;
+        transform: rotate(90deg);
+    }
+    51% {
+        top: 140px;
+        left: 144px;
+        transform: rotate(180deg);
+    }
+    75% {
+        top: 140px;
+        left: 4px;
+        transform: rotate(180deg);
+    }
+    76% {
+        top: 140px;
+        left: 4px;
+        transform: rotate(270deg);
+    }
+    100% {
+        top: 2px;
+        left: 4px;
+        transform: rotate(270deg);
+    }
+}
+
+/*===================================*/
+/*============ Shadow 3 =============*/
+/*===================================*/
+.animShadow3 {
+        animation: 6s linear infinite movingShadow3;
+}
+
+@keyframes movingShadow3 {
+    0% {
+        top: 2px;
+        left: 4px;
+        transform: rotate(0deg);
+    }
+    34% {
+        top: 2px;
+        left: 271px;
+        transform: rotate(0deg);
+    }
+    35% {
+        top: 2px;
+        left: 261px;
+        transform: rotate(90deg);
+    }
+    50% {
+        top: 106px;
+        left: 261px;
+        transform: rotate(90deg);
+    }
+    51% {
+        top: 106px;
+        left: 261px;
+        transform: rotate(180deg);
+    }
+    84% {
+        top: 106px;
+        left: 4px;
+        transform: rotate(180deg);
+    }
+    85% {
+        top: 106px;
         left: 4px;
         transform: rotate(270deg);
     }

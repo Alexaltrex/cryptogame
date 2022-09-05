@@ -136,6 +136,10 @@
       .copyBtn, .linkBtn {
         @include button;
         margin-left: 15px;
+
+        svg path {
+          fill: #A496DD;
+        }
       }
 
 

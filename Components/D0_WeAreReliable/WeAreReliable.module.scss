@@ -12,10 +12,6 @@
 
   .inner {
     @include inner;
-    //background: rgba(127, 133, 178, 0.05);
-    //border: 1px solid rgba(181, 207, 204, 0.17);
-    //border-radius: 15px;
-    //padding: 30px 20px 20px;
     display: flex;
     flex-direction: column;
 
@@ -23,8 +19,6 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      //padding: 0px 60px;
-      //height: 424px;
     }
 
     .firstBlock {
@@ -61,12 +55,28 @@
         @include desktop {
           text-align: left;
         }
+
+        &_1 {
+          margin-top: 25px;
+
+          @include desktop {
+            margin-top: 30px;
+          }
+        }
+
+        &_2 {
+          margin-top: 30px;
+
+          @include desktop {
+            margin-top: 60px;
+          }
+        }
       }
 
       .accountWrapper {
         align-self: stretch;
         margin-top: 15px;
-        background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
+        background: #272A3B;
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.12);
         border-radius: 30px;
         height: 44px;
@@ -88,55 +98,41 @@
           text-overflow: ellipsis;
         }
 
-        .copyBtn {
+        .copyBtn, .linkBtn {
           @include button;
+
+          svg path {
+            fill: #A496DD;
+          }
+        }
+
+        .copyBtn {
           margin-left: 15px;
         }
 
         .linkBtn {
-          @include button;
           margin-left: 10px;
         }
 
+
+
       }
 
-      .downloadBlock {
-        margin-top: 30px;
+      .selectAndButton {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
 
-        @include desktop {
-          margin-top: 40px;
-        }
-
-        .text {
-          font-weight: 300;
-          font-size: 14px;
-          line-height: 21px;
-          text-align: center;
+        .downloadBtn {
+          margin-left: 12px;
+          width: 180px;
 
           @include desktop {
-            text-align: left;
+            width: 244px;
+            height: 50px;
           }
         }
-
-        .selectAndButton {
-          margin-top: 16px;
-          display: flex;
-          align-items: center;
-
-          .downloadBtn {
-            margin-left: 12px;
-            width: 180px;
-
-            @include desktop {
-              width: 244px;
-              height: 50px;
-            }
-          }
-        }
-
       }
-
-
 
     }
 

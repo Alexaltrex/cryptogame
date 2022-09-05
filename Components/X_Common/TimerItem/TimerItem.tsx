@@ -6,30 +6,54 @@ interface ITimerItem {
     time: string
     unit: string
     animationDelay: string
+    className?: string
+    animShadowClassName?: string
+    animBallClassName?: string
+    finish?: boolean
 }
 
 export const TimerItem: FC<ITimerItem> = ({
                                               time,
                                               unit,
-                                              animationDelay
-}) => {
+                                              animationDelay,
+                                              className,
+                                              animShadowClassName = "animShadow",
+                                              animBallClassName = "animBall",
+                                              finish = false
+                                          }) => {
     return (
-        <div className={style.timerItem}>
+        <div className={clsx(style.timerItem, Boolean(className) && className)}>
             <div className={style.wrapper}>
-                <div className={clsx(style.shadow, "animShadow")}
-                     style={{animationDelay}}
-                >
-                    <div className={style.shadowInner}/>
-                </div>
+                {
+                    !finish &&
+                    <div className={clsx(
+                        style.shadow,
+                        animShadowClassName
+                    )}
+                         style={{animationDelay}}
+                    >
+                        <div className={style.shadowInner}/>
+                    </div>
+                }
+
             </div>
 
             <div className={style.inner}>
-                <p className={style.time}>{time}</p>
+                <p className={clsx({
+                    [style.time]: true,
+                    [style.time_finish]: finish,
+                })}>{time}</p>
                 <p className={style.unit}>{unit}</p>
             </div>
-            <div className={clsx(style.ball, "animBall")}
-                 style={{animationDelay}}
-            />
+            {
+                !finish &&
+                <div className={clsx(
+                    style.ball,
+                    animBallClassName
+                )}
+                     style={{animationDelay}}
+                />
+            }
 
         </div>
     )

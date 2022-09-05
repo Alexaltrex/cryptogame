@@ -14,13 +14,16 @@ export const ButtonOutlined: FC<ButtonOutlinedType> = ({
                                                            label,
                                                            icon,
                                                            className,
-                                                           animateIcon = true
+                                                           animateIcon = true,
+                                                           ...props
                                                        }) => {
     return (
         <button className={clsx({
             [style.buttonOutlined]: true,
             [style.buttonOutlined_animateIcon]: animateIcon,
-        }, Boolean(className) && className)}>
+        }, Boolean(className) && className)}
+                {...props}
+        >
             <span>{label}</span>
             {
                 icon && (

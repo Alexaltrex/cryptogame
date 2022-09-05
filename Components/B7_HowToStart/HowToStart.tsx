@@ -51,7 +51,7 @@ export const HowToStart = () => {
                     <img src="/png/how to start/try_desktop.png"
                          alt="" className={style.tryDesktop}
                          data-aos="zoom-in"
-                         data-aos-delay="500"
+                         data-aos-delay="250"
                     />
                     {
                         steps.map(({step, src, text}, index) => (

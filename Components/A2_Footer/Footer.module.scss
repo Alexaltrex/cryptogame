@@ -162,6 +162,11 @@
         font-size: 14px;
         line-height: 21px;
         color: #83848E;
+        transition: 0.3s;
+
+        &:hover {
+          color: #FFF;
+        }
       }
 
       .links {

@@ -3,10 +3,11 @@ import {TimerItem} from "../X_Common/TimerItem/TimerItem";
 import {H2} from "../X_Common/H2/H2";
 import * as React from "react";
 import {svgIcons} from "../../assets/svgIcons";
+import {units} from "../../consts/date";
+import {useTimer} from "../../hooks/useTimer";
 
 export const Timer = () => {
-
-
+    const date = useTimer();
 
     return (
         <div className={style.timer}>
@@ -26,17 +27,24 @@ export const Timer = () => {
                     <div className={style.inner}>
                         {
                             [
-                                {time: "11", unit: "Days"},
-                                {time: "11", unit: "Hours"},
-                                {time: "11", unit: "Minutes"},
-                                {time: "11", unit: "Seconds"},
-                            ].map(({time, unit}, index) => (
-                                <TimerItem time={time}
-                                           unit={unit}
-                                           key={index}
-                                           animationDelay={`${index * 6/4}s`}
-                                />
-                            ))
+                                {time: date.days, finish: date.days === "00"},
+                                {time: date.hours, finish: date.days === "00" && date.hours === "00"},
+                                {
+                                    time: date.minutes,
+                                    finish: date.days === "00" && date.hours === "00" && date.minutes === "00"
+                                },
+                                {
+                                    time: date.seconds,
+                                    finish: date.days === "00" && date.hours === "00" && date.minutes === "00" && date.seconds === "00"
+                                },
+                            ]
+                                .map((el, index) => (
+                                    <TimerItem {...el}
+                                               unit={units[index]}
+                                               key={index}
+                                               animationDelay={`${index * 6 / 4}s`}
+                                    />
+                                ))
                         }
                     </div>
 

@@ -1,9 +1,12 @@
 import style from "./Blocks.module.scss";
 import {svgIcons} from "../../../assets/svgIcons";
 
-const account = "0x41eaD2756aDEawdas122SF41eaD2756aDEawdas122SF"
+
 
 export const Rewards = () => {
+    const account = "0x41eaD2756aDEawdas122SF41eaD2756aDEawdas122SF"
+    const onCopy = () => navigator.clipboard.writeText(account);
+
     return (
         <>
             <p className={style.title}>Rewards</p>
@@ -38,6 +41,7 @@ export const Rewards = () => {
                     {account}
                 </p>
                 <button className={style.copyBtn}
+                        onClick={onCopy}
                 >
                     {svgIcons.copy}
                 </button>

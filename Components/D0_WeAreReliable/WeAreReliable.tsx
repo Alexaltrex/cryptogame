@@ -4,19 +4,16 @@ import {useRef, useState} from "react";
 import {ButtonOutlined} from "../X_Common/ButtonOutlined/ButtonOutlined";
 import {ButtonCustom} from "../X_Common/ButtonCustom/ButtonCustom";
 import {LangSelector} from "../X_Common/LangSelector/LangSelector";
+import clsx from "clsx";
 
-const account = "0x41eaD2756aDEawdas122SF41eaD2756aDEawdas122SF"
+
 
 
 export const WeAreReliable = () => {
     const ref = useRef<HTMLParagraphElement>(null!);
-    const onCopy = () => {
-        // ref.current.select();
-        // document.execCommand('copy');
-    }
-
-    const [lang, setLang] = useState('EN')
-
+    const account = "0x55eaD2756aDEawdas122SF41eaD2756aDEawdas122SF";
+    const onCopy = () => navigator.clipboard.writeText(account);
+    const [lang, setLang] = useState('EN');
 
     return (
         <div className={style.weAreReliable}>
@@ -25,7 +22,7 @@ export const WeAreReliable = () => {
                 <div className={style.firstBlock}>
                     <p className={style.title}>We are reliable Smart Contract</p>
 
-                    <p className={style.text}>The crypto game is based on a smart contract:</p>
+                    <p className={clsx(style.text, style.text_1)}>The crypto game is based on a smart contract:</p>
 
                     <div className={style.accountWrapper}>
                         <p className={style.account}
@@ -43,8 +40,7 @@ export const WeAreReliable = () => {
                         </button>
                     </div>
 
-                    <div className={style.downloadBlock}>
-                        <p className={style.text}>Presentation and Brandbook:</p>
+                        <p className={clsx(style.text, style.text_2)}>Presentation and Brandbook:</p>
                         <div className={style.selectAndButton}>
 
                             <LangSelector lang={lang}
@@ -58,10 +54,7 @@ export const WeAreReliable = () => {
 
                             />
 
-
                         </div>
-                    </div>
-
 
                 </div>
 

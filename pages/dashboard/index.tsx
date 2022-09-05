@@ -3,17 +3,12 @@ import {Levels} from "../../Components/E1_Levels/Levels";
 import {Stats} from "../../Components/E2_Stats/Stats";
 import {Schedule} from "../../Components/E3_Schedule/Schedule";
 import {LastAction} from "../../Components/E4_LastAction/LastAction";
-import {InvitedBlock} from "../../Components/X_Common/InvitedBlock/InvitedBlock";
+import {DashboardTimer} from "../../Components/E0_DashboardTimer/DashboardTimer";
 
 const Dashboard = () => {
     return (
         <MainLayout  headTitle='Crypto Game | Dashboard'>
-
-            <InvitedBlock label="Smart contract:"
-                          value="0x41eaD2756aDEawdas122SF41eaD2756aDEawdas122SF"
-                          onClick={() => {}}
-            />
-
+            <DashboardTimer/>
             <Levels/>
             <Stats/>
             <Schedule/>

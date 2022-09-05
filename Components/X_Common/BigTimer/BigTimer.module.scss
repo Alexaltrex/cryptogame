@@ -1,20 +1,14 @@
 @import "./assets/scss/app";
 
-.timerItem {
+.bigTimer {
   position: relative;
-  width: 128px;
-  height: 118px;
+  width: 278px;
+  height: 114px;
   border: 3px solid rgba(181, 207, 204, 0.17);
   box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.23);
   border-radius: 14px;
   box-sizing: border-box;
   padding: 3px;
-
-  @include desktop {
-    width: 208px;
-    height: 189px;
-    padding: 5px;
-  }
 
   .inner {
     position: relative;
@@ -23,43 +17,39 @@
     height: 100%;
     background: rgb(35, 37, 57);
     border-radius: 11px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include centerRow;
 
-    @include desktop {
-      border-radius: 9px;
-    }
+    .item {
+      width: 52px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-    .time {
-      margin-top: 14px;
-      font-weight: 500;
-      font-size: 40px;
-      line-height: 60px;
-      transition: 0.3s;
-
-      @include desktop {
-        margin-top: 24px;
-        font-size: 70px;
-        line-height: 105px;
+      .divider {
+        width: 15px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 48px;
       }
 
-      &_finish {
-        opacity: 0.1;
+      .time {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 48px;
+
+        &_finish {
+          opacity: 0.1;
+        }
+      }
+
+      .unit {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
       }
     }
 
-    .unit {
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 21px;
-
-      @include desktop {
-        margin-top: 1px;
-        font-size: 18px;
-        line-height: 27px;
-      }
-    }
 
   }
 
@@ -75,11 +65,6 @@
     z-index: 3;
     top: -3px;
     left: -3px;
-
-    @include desktop {
-      width: 13px;
-      height: 13px;
-    }
   }
 
   .wrapper {
@@ -104,12 +89,9 @@
         left: 0;
         width: 130px;
         height: 130px;
-        //background: linear-gradient(90deg, rgba(95, 70, 190, 0), rgba(95, 70, 190, 1)); //95 70 190
         background: radial-gradient(circle at 100% 50%, rgba(95, 70, 190, 1) 0%, rgba(95, 70, 190, 0) 50%); //95 70 190
-
         transform: translate(-100%, -50%);
       }
     }
   }
-
 }

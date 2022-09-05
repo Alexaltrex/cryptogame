@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, useState} from "react";
 import {ILevelCard, StatusEnum} from "../../../types/types";
 import style from "./LevelCard.module.scss"
 import clsx from "clsx";
@@ -6,6 +6,8 @@ import {Dot} from "../Dot/Dot";
 import {svgIcons} from "../../../assets/svgIcons";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../../store/useStore";
+import {ClickAwayListener, styled, Tooltip, TooltipProps} from "@mui/material";
+import tooltipClasses from "@mui/material/Tooltip/tooltipClasses";
 
 export const LevelCard: FC<ILevelCard> = observer(({
                                               level,
@@ -16,10 +18,10 @@ export const LevelCard: FC<ILevelCard> = observer(({
                                               status
 }) => {
     const {setOpenLevel} = useStore();
+    const [open, setOpen] = useState(false);
 
     return (
         <div className={style.levelCard}
-             onClick={() => setOpenLevel(true)}
         >
 
             <div className={clsx({
@@ -48,7 +50,69 @@ export const LevelCard: FC<ILevelCard> = observer(({
                 </div>
 
                 <div className={style.block}>
-                    <p className={clsx(style.label, style.label_dashed)}>Payment</p>
+
+                    <div className={style.tooltipWrapperMobile}>
+                        <ClickAwayListener onClickAway={() => setOpen(false)}>
+                                <HtmlTooltip
+                                    PopperProps={{
+                                        disablePortal: true,
+                                    }}
+                                    onClose={() => setOpen(false)}
+                                    open={open}
+                                    disableFocusListener
+                                    disableHoverListener
+                                    disableTouchListener
+                                    title={
+                                        <div className={style.tooltipBlock}>
+                                            <button className={style.closeBtn}
+                                                    onClick={() => setOpen(false)}
+                                            >
+                                                {svgIcons.close}
+                                            </button>
+                                            <p className={style.tooltipTitle}>Lorem Ipsum </p>
+                                            <p className={style.tooltipText}>
+                                                is simply dummy text of the printing and typesetting industry.
+                                            </p>
+                                        </div>
+                                    }
+                                    placement="top-start"
+                                    arrow
+                                >
+                                    <p className={clsx(style.label, style.label_dashed)}
+                                       onClick={() => setOpen(true)}
+                                    >
+                                        Payment
+                                    </p>
+                                </HtmlTooltip>
+                        </ClickAwayListener>
+                    </div>
+
+                    <div className={style.tooltipWrapperDesktop}>
+                        <HtmlTooltip disableFocusListener
+                                 disableTouchListener
+                                 title={
+                                     <div className={style.tooltipBlock}>
+                                         <button className={style.closeBtn}
+                                                 onClick={() => setOpen(false)}
+                                         >
+                                             {svgIcons.close}
+                                         </button>
+                                         <p className={style.tooltipTitle}>Lorem Ipsum </p>
+                                         <p className={style.tooltipText}>
+                                             is simply dummy text of the printing and typesetting industry.
+                                         </p>
+                                     </div>
+                                 }
+                                 placement="top-start"
+                                 arrow
+                        >
+                            <p className={clsx(style.label, style.label_dashed)}>
+                                Payment
+                            </p>
+                        </HtmlTooltip>
+                    </div>
+
+
                     <div className={style.dots}>
                         {
                             [
@@ -76,9 +140,21 @@ export const LevelCard: FC<ILevelCard> = observer(({
                 [style.bottom]: true,
                 [style.bottom_blocked]: status === StatusEnum.Blocked,
                 [style.bottom_active]: status === StatusEnum.Active,
-            })}>
+            })}
+                 onClick={() => setOpenLevel(true)}
+            >
                 {info}{status === StatusEnum.Active && svgIcons.balance}
             </div>
         </div>
     )
 })
+
+const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+        padding: 0,
+        borderRadius: "7px",
+        border: "none",
+    },
+}));
