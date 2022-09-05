@@ -7,7 +7,37 @@
   box-sizing: border-box;
   padding-bottom: 466px;
 
+  overflow: hidden;
+
   @include desktop {
     padding-bottom: 183px;
   }
+
+  .main {
+    position: relative;
+    z-index: 2;
+  }
+
+  .BallsFromMainPage {
+    @include onlyDesktop();
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .ball0 {
+      position: absolute;
+      top: 0px;
+      left: -0px;
+    }
+    .ball1 {
+      position: absolute;
+      top: 195px;
+      right: 0px;
+    }
+  }
+
+
 }
