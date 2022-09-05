@@ -77,7 +77,9 @@ export const WriteToUs = observer(() => {
                                    {...formik.getFieldProps('name')}
                             />
                         </div>
-                        {formik.errors.name && <p className={style.error}>{formik.errors.name}</p>}
+                        {
+                            formik.errors.name && formik.touched.name && <p className={style.error}>{formik.errors.name}</p>
+                        }
                     </div>
 
                     <div className={style.inputBlock}>
@@ -93,7 +95,7 @@ export const WriteToUs = observer(() => {
                                    {...formik.getFieldProps('email')}
                             />
                         </div>
-                        {formik.errors.email && <p className={style.error}>{formik.errors.email}</p>}
+                        {formik.errors.email && formik.touched.email && <p className={style.error}>{formik.errors.email}</p>}
                     </div>
 
                 </div>
@@ -111,7 +113,7 @@ export const WriteToUs = observer(() => {
 
                     />
                     </div>
-                    {formik.errors.question && <p className={style.error}>{formik.errors.question}</p>}
+                    {formik.errors.question && formik.touched.question && <p className={style.error}>{formik.errors.question}</p>}
                 </div>
 
                 <div className={style.checkboxWrapper}>
