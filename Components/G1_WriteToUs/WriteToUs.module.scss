@@ -2,6 +2,11 @@
 
 .writeToUs {
 
+  @include desktop {
+    width: 560px;
+  }
+
+
   .form {
     background: rgba(127, 133, 178, 0.05);
     border-radius: 15px;
@@ -43,6 +48,9 @@
       .inputBlock {
         position: relative;
 
+        @include desktop {
+          width: 240px;
+        }
 
         &:nth-child(2) {
           margin-top: 20px;
