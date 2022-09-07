@@ -5,7 +5,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-
+  z-index: 2;
 
   .top {
     @include container;
@@ -98,6 +98,17 @@
           transform: translate(-50%, -50%);
         }
 
+        .animatedLink {
+          &:not(:first-child) {
+            margin-top: 20px;
+
+            @include desktop {
+              margin-top: 0;
+              margin-left: 50px;
+            }
+          }
+        }
+
         .link {
           text-transform: none;
           text-decoration: none;
@@ -110,18 +121,13 @@
             font-size: 16px;
             line-height: 24px;
           }
-
-          &:not(:first-child) {
-            margin-top: 20px;
-
-            @include desktop {
-              margin-top: 0;
-              margin-left: 50px;
-            }
-
-
-          }
         }
+
+        .disclaimerBtn {
+          @include button;
+        }
+
+
       }
 
       .btn {
@@ -191,6 +197,7 @@
           font-size: 14px;
           line-height: 21px;
           color: #83848E;
+          transition: 0.3s;
 
           &:not(:first-child) {
             margin-top: 20px;
@@ -199,6 +206,10 @@
               margin-top: 0;
               margin-left: 32px;
             }
+          }
+
+          &:hover {
+            color: #FFF;
           }
         }
       }

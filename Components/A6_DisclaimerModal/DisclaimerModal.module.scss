@@ -1,0 +1,51 @@
+@import "./assets/scss/app";
+
+.disclaimerModal {
+  @include modal;
+
+  .inner {
+    position: relative;
+    background: #191C2E;
+    border-radius: 15px;
+    border: 1px solid rgba(181, 207, 204, 0.17);
+    width: calc(100vw - 40px);
+    padding: 30px 20px 25px;
+    box-sizing: border-box;
+
+    @include desktop {
+      width: 456px;
+      padding: 40px 35px 35px;
+    }
+
+    .closeBtn {
+      @include button;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+
+      @include desktop {
+        font-size: 32px;
+      }
+    }
+
+    .description {
+      margin-top: 20px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 160%;
+      color: #CFD0D4;
+
+      @include desktop {
+        font-size: 16px;
+        margin-top: 24px;
+      }
+    }
+  }
+
+}

@@ -8,6 +8,7 @@ import {svgIcons} from "../../assets/svgIcons";
 import clsx from "clsx";
 import {useRouter} from "next/router";
 import {AccountBlock} from "./AccountBlock/Account";
+import {AnimatedLink} from "../X_Common/AnimatedLink/AnimatedLink";
 
 export const headerLinks = [
     {label: "How it works?", href: "/howItWorks"},
@@ -36,16 +37,24 @@ export const Header = observer(() => {
                 </Link>
 
                 <div className={style.center}>
+
                     {
                         (login ? authHeaderLinks : headerLinks).map(({label, href}, index) => (
-                            <Link key={index} href={href}>
-                                <a className={clsx({
-                                    [style.link]: true,
-                                    [style.link_active]: router.pathname.includes(href),
-                                })}>
-                                    {label}
-                                </a>
-                            </Link>
+                            <AnimatedLink key={index}
+                                          enable={!router.pathname.includes(href)}
+                                          className={style.animatedLink}
+                            >
+                                <Link key={index} href={href}>
+                                    <a className={clsx({
+                                        [style.link]: true,
+                                        [style.link_active]: router.pathname.includes(href),
+                                    })}>
+                                        {label}
+                                    </a>
+                                </Link>
+                            </AnimatedLink>
+
+
                         ))
                     }
                 </div>

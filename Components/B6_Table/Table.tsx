@@ -47,7 +47,7 @@ export const Table = () => {
                                         </p>
                                     </div>
                                     <div className={style.cell}>
-                                        <a href={link}>
+                                        <a href={link} className={style.link}>
                                             {
                                                 svgIcons.link
                                             }

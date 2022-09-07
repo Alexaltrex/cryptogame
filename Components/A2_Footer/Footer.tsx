@@ -2,14 +2,19 @@ import style from "./Footer.module.scss"
 import Link from "next/link";
 import {ButtonCustom} from "../X_Common/ButtonCustom/ButtonCustom";
 import * as React from "react";
+import {AnimatedLink} from "../X_Common/AnimatedLink/AnimatedLink";
+import clsx from "clsx";
+import {observer} from "mobx-react-lite";
+import {useStore} from "../../store/useStore";
 
 export const footerLinks = [
     {label: "How it works?", href: "howItWorks"},
     {label: "Promo", href: "promo"},
-    {label: "Disclaimer", href: "disclaimer"},
+    //{label: "Disclaimer", href: "disclaimer"},
 ]
 
-export const Footer = () => {
+export const Footer = observer(() => {
+    const {setDisclaimer} = useStore();
     return (
         <footer className={style.footer}>
 
@@ -25,13 +30,27 @@ export const Footer = () => {
                     <div className={style.links}>
                         {
                             footerLinks.map(({label, href}, index) => (
-                                <Link key={index} href={href}>
-                                    <a className={style.link}>
-                                        {label}
-                                    </a>
-                                </Link>
+                                <AnimatedLink key={index}
+                                              className={style.animatedLink}
+                                >
+                                    <Link key={index} href={href}>
+                                        <a className={style.link}>
+                                            {label}
+                                        </a>
+                                    </Link>
+                                </AnimatedLink>
+
                             ))
                         }
+                        <AnimatedLink className={style.animatedLink}
+                        >
+                            <button className={clsx(style.link, style.disclaimerBtn)}
+                                    onClick={() => setDisclaimer(true)}
+                            >
+                                Disclaimer
+                            </button>
+                        </AnimatedLink>
+
                     </div>
 
                     <ButtonCustom label="Let’s Start"
@@ -53,7 +72,7 @@ export const Footer = () => {
                         </a>
 
                         <Link href="/policy">
-                            <a className={style.logoBlock}>
+                            <a className={style.policy}>
                                 Privace Policy
                             </a>
                         </Link>
@@ -64,4 +83,4 @@ export const Footer = () => {
 
         </footer>
     )
-}
+})

@@ -98,7 +98,7 @@
             }
           }
 
-          a {
+          .link {
             align-self: flex-end;
             @include centerColumn;
             border-radius: 5px;
@@ -114,9 +114,21 @@
 
             svg {
               width: 12px;
+              transition: 0.3s;
 
               @include desktop {
                 width: 15px;
+              }
+
+              path {
+                transition: 0.3s;
+                fill: #A6A7B5;
+              }
+            }
+
+            &:hover {
+              svg path {
+                fill: #FFF;
               }
             }
           }

@@ -1,0 +1,86 @@
+@import "./assets/scss/app";
+
+.clearRules {
+  @include container;
+  padding-top: 70px;
+
+  @include desktop {
+    padding-top: 170px;
+  }
+
+  .inner {
+    @include inner;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .first {
+
+      @include desktop {
+        width: 460px;
+      }
+
+      .title {
+        @include desktop {
+          text-align: left;
+        }
+      }
+
+      .description {
+        margin-top: 20px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 160%;
+        text-align: center;
+
+        @include desktop {
+          margin-top: 24px;
+          font-size: 16px;
+          text-align: left;
+        }
+      }
+
+      .btn {
+        @include onlyDesktop(flex);
+        margin-top: 40px;
+        width: 200px;
+      }
+
+    }
+
+    .second {
+      .wrapper {
+        //border: 1px solid red;
+        box-sizing: border-box;
+        position: relative;
+
+        .refreshBtn {
+          @include button;
+          position: absolute;
+          top: 12vw;
+          right: 11vw;
+          z-index: 2;
+
+          @include desktop {
+            top: 68px;
+            right: 68px;
+          }
+        }
+
+
+      }
+
+      .btnMobile {
+        @include onlyMobile(flex);
+        margin-top: 30px;
+        width: 190px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}

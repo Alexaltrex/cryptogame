@@ -7,6 +7,8 @@ export class Store {
     connectWallet = false
     openLevel = false
     sentMessage = false
+    disclaimer = false
+
 
     constructor() {
         makeObservable(this, {
@@ -16,12 +18,14 @@ export class Store {
             connectWallet: observable,
             openLevel: observable,
             sentMessage: observable,
+            disclaimer: observable,
             setBurgerMenu: action.bound,
             setActiveLink: action.bound,
             setLogin: action.bound,
             setConnectWallet: action.bound,
             setOpenLevel: action.bound,
             setSentMessage: action.bound,
+            setDisclaimer: action.bound,
         })
     }
 
@@ -49,5 +53,10 @@ export class Store {
     setSentMessage(sentMessage: boolean) {
         this.sentMessage = sentMessage
     }
+
+    setDisclaimer(disclaimer: boolean) {
+        this.disclaimer = disclaimer
+    }
+
 }
 export const store = new Store()

@@ -66,6 +66,12 @@
         transform: translate(-50%, -50%);
       }
 
+      .animatedLink {
+        &:not(:first-child) {
+          margin-left: 55px;
+        }
+      }
+
       .link {
         text-transform: none;
         text-decoration: none;
@@ -73,10 +79,6 @@
         font-size: 16px;
         line-height: 24px;
         color: #FFF;
-
-        &:not(:first-child) {
-          margin-left: 55px;
-        }
 
         &_active {
           color: #9680ED;
