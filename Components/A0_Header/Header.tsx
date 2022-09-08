@@ -22,14 +22,17 @@ export const authHeaderLinks = [
 ]
 
 export const Header = observer(() => {
-    const {burgerMenu, setBurgerMenu, login, setConnectWallet} = useStore();
+    const {burgerMenu, setBurgerMenu, login, setConnectWallet, setLogin} = useStore();
     const router = useRouter();
     return (
         <header className={style.header}>
             <div className={style.inner}>
                 <Link href="/">
                     <a className={style.left}
-                       onClick={() => setBurgerMenu(false)}
+                       onClick={() => {
+                           setLogin(false)
+                           setBurgerMenu(false)
+                       }}
                     >
                         <img src="/png/logo.png" alt=""/>
                         <p className={style.text}>Good Game</p>

@@ -110,6 +110,8 @@
       }
 
       .bottom {
+        text-transform: none;
+        text-decoration: none;
         @include centerRow;
         height: 53px;
         background: linear-gradient(262.44deg, #4428B8 -4.77%, rgba(104, 78, 211, 0.96) 105.76%);
@@ -119,6 +121,10 @@
           height: auto;
           width: 100px;
           border-radius: 0px 15px 15px 0px;
+        }
+
+        &:hover {
+          background: linear-gradient(262.44deg, #4025AB -4.77%, rgba(82, 60, 167, 0.96) 105.76%);
         }
 
         p {

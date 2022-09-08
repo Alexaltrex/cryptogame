@@ -14,13 +14,13 @@ export const footerLinks = [
 ]
 
 export const Footer = observer(() => {
-    const {setDisclaimer} = useStore();
+    const {setDisclaimer, setLogin} = useStore();
     return (
         <footer className={style.footer}>
 
             <div className={style.top}>
                 <div className={style.inner}>
-                    <Link href="/">
+                    <Link href="/" onClick={() => setLogin(false)}>
                         <a className={style.logoBlock}>
                             <img src="/png/logo.png" alt=""/>
                             <p className={style.text}>Good Game</p>

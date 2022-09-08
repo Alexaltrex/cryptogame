@@ -9,6 +9,79 @@ import {OpenLevel} from "../../Components/A4_OpenLevel/OpenLevel";
 import {SentMessageModal} from "../../Components/A5_SentMessageModal/SentMessageModal";
 import React from "react";
 import {DisclaimerModal} from "../../Components/A6_DisclaimerModal/DisclaimerModal";
+import {useRouter} from "next/router";
+
+const ballSrc = {
+    yellow: "/png/balls/yellow.png",
+    purple: "/png/balls/purple.png",
+    blue: "/png/balls/blue.png",
+}
+
+const balls = {
+    "/": {
+        top: 0,
+        balls: [
+            ballSrc.yellow,
+            ballSrc.purple,
+            ballSrc.yellow,
+            ballSrc.purple,
+            ballSrc.blue,
+            ballSrc.purple,
+            ballSrc.yellow,
+        ]
+    },
+    "/howItWorks": {
+        top: 1000,
+        balls: [
+            ballSrc.yellow,
+            ballSrc.purple,
+            ballSrc.blue,
+            ballSrc.purple,
+            ballSrc.blue,
+            ballSrc.yellow,
+            ballSrc.purple,
+            ballSrc.purple,
+            ballSrc.blue,
+            ballSrc.purple,
+        ]
+    },
+    "/promo": {
+        top: 500,
+        balls: [
+            ballSrc.purple,
+            ballSrc.yellow,
+
+        ]
+    },
+    "/dashboard": {
+        top: 500,
+        balls: [
+            ballSrc.blue,
+            ballSrc.yellow,
+            ballSrc.blue,
+            ballSrc.blue,
+            ballSrc.yellow,
+            ballSrc.purple,
+        ]
+    },
+    "/referrals": {
+        top: 500,
+        balls: [
+            ballSrc.purple,
+            ballSrc.blue,
+            ballSrc.yellow,
+        ]
+    },
+    "/support": {
+        top: 500,
+        balls: [
+            ballSrc.purple,
+            ballSrc.blue,
+            ballSrc.yellow,
+        ]
+    },
+}
+
 
 interface IMainLayout {
     children: ReactNode
@@ -19,6 +92,8 @@ export const MainLayout: FC<IMainLayout> = ({
                                                 children,
                                                 headTitle = 'Crypto Game',
                                             }) => {
+    const router = useRouter();
+    console.log(router)
 
     return (
         <div className={style.mainLayout}>
@@ -45,35 +120,25 @@ export const MainLayout: FC<IMainLayout> = ({
 
             <Footer/>
 
-
-            <div className={style.BallsFromMainPage}>
+            <div className={style.balls}>
                 {
-                    [0, 1000, 2000, 3000, 4000, 5000, 6000].map((top, index) => (
-                        <React.Fragment key={index}>
-                            <img src="/png/balls/main page/0.png"
-                                 alt=""
-                                //className={style.ball0}
+                    // @ts-ignore
+                    (balls[router.pathname].balls as string[])
+                        .map((src, index) => (
+                            <div key={index}
+                                 className={style.imgWrapper}
                                  style={{
-                                     position: "absolute",
-                                     top: `${-200 + top}px`,
-                                     left: 0
+                                     left: index % 2 === 0 ? 0 : "auto",
+                                     right: index % 2 === 0 ? "auto" : 0,
+                                     // @ts-ignore
+                                     top: `${index * 1000 + balls[router.pathname].top}px`
                                  }}
-                            />
-                            <img src="/png/balls/main page/1.png"
-                                 alt=""
-                                //className={style.ball1}
-                                 style={{
-                                     position: "absolute",
-                                     top: `${200 + top}px`,
-                                     right: 0
-                                 }}
-                            />
-                        </React.Fragment>
-                    ))
+                            >
+                                <img src={src} alt=""/>
+                            </div>
+                        ))
                 }
-
             </div>
-
 
         </div>
     )

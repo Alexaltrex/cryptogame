@@ -113,8 +113,39 @@
   z-index: 999;
   background: rgba(0, 0, 0, 0.4);
 
-
   &_show {
     @include centerColumn;
+  }
+}
+
+@mixin tableRow {
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    background: #1E2037;
+
+    @include desktop {
+      &:before {
+        content: "";
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: #644CC5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 2px 2px 0px;
+      }
+    }
+  }
+
+  &_selected {
+    background: linear-gradient(90deg, rgba(100, 76, 197, 0.83) -182.23%, rgba(100, 76, 197, 0.03) 98.84%);
+
+    &:hover {
+      background: linear-gradient(90deg, rgba(100, 76, 197, 0.83) -182.23%, rgba(100, 76, 197, 0.03) 98.84%);
+    }
   }
 }

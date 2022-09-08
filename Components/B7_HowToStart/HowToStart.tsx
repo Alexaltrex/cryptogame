@@ -42,17 +42,20 @@ export const HowToStart = () => {
                         {svgIcons.arrow_howToStart_desktop}
                     </div>
 
-                    <img src="/png/how to start/try_mobile.png"
-                         alt=""
-                         className={style.tryMobile}
-                         data-aos="zoom-in"
-                         data-aos-delay="500"
-                    />
-                    <img src="/png/how to start/try_desktop.png"
-                         alt="" className={style.tryDesktop}
+                    <div className={style.tryMobile}
                          data-aos="zoom-in"
                          data-aos-delay="250"
-                    />
+                    >
+                        {svgIcons.try_mobile}
+                    </div>
+
+                    <div className={style.tryDesktop}
+                         data-aos="zoom-in"
+                         data-aos-delay="250"
+                    >
+                        {svgIcons.try_desktop}
+                    </div>
+
                     {
                         steps.map(({step, src, text}, index) => (
                             <div className={style.card}

@@ -1,13 +1,10 @@
 import style from "./WeAreReliable.module.scss"
 import {svgIcons} from "../../assets/svgIcons";
 import {useRef, useState} from "react";
-import {ButtonOutlined} from "../X_Common/ButtonOutlined/ButtonOutlined";
 import {ButtonCustom} from "../X_Common/ButtonCustom/ButtonCustom";
 import {LangSelector} from "../X_Common/LangSelector/LangSelector";
 import clsx from "clsx";
-
-
-
+import {CopyButton} from "../X_Common/CopyButton/CopyButton";
 
 export const WeAreReliable = () => {
     const ref = useRef<HTMLParagraphElement>(null!);
@@ -30,11 +27,11 @@ export const WeAreReliable = () => {
                         >
                             {account}
                         </p>
-                        <button className={style.copyBtn}
-                                onClick={onCopy}
-                        >
-                            {svgIcons.copy}
-                        </button>
+
+                        <CopyButton className={style.copyBtn}
+                                    onClick={onCopy}
+                        />
+
                         <button className={style.linkBtn}>
                             {svgIcons.link2}
                         </button>

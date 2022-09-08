@@ -23,7 +23,7 @@ export const AccountBlock = observer(() => {
 
     const list = [
         {icon: svgIcons.copy, label: "Copy Address", onClick: () => navigator.clipboard.writeText(account) },
-        {icon: svgIcons.link, label: "View Explorer", onClick: () => {}},
+        {icon: svgIcons.share, label: "View Explorer", onClick: () => {}},
         {icon: svgIcons.logout, label: "Disconnect Wallet", onClick: () => setLogin(false)},
     ]
 

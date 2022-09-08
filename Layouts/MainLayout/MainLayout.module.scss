@@ -18,6 +18,28 @@
     z-index: 2;
   }
 
+  .balls {
+    overflow: hidden;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .imgWrapper {
+      position: absolute;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+
+    }
+  }
+
   .BallsFromMainPage {
     overflow: hidden;
     @include onlyDesktop();

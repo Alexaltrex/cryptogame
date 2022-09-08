@@ -60,9 +60,9 @@ export const ContactToUs = observer(() => {
                                 <p className={style.description}>{description}</p>
                             </div>
 
-                            <div className={style.bottom}>
+                            <a className={style.bottom} href="#">
                                 <p>go</p>
-                            </div>
+                            </a>
 
                         </div>
                     ))

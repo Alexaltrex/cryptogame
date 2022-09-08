@@ -87,13 +87,25 @@
         }
 
         .copyBtn {
-          @include button;
           margin-left: 15px;
         }
 
         .linkBtn {
           @include button;
+          width: 20px;
+          height: 20px;
           margin-left: 10px;
+
+          svg path {
+            transition: 0.3s;
+            fill: rgba(255,255,255,0.5);
+          }
+
+          &:hover {
+            svg path {
+              fill: rgba(255,255,255);
+            }
+          }
         }
 
       }
@@ -186,8 +198,9 @@
       .labelMobile {
         @include onlyMobile();
         position: absolute;
-        top: -45px;
+        top: -36px;
         right: -40px;
+        width: 107.43px;
       }
 
       .labelDesktop {
@@ -195,6 +208,7 @@
         position: absolute;
         top: -40px;
         left: -50px;
+        width: 126px;
       }
 
     }

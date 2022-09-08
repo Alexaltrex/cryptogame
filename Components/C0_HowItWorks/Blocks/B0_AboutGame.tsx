@@ -1,4 +1,5 @@
 import style from "./Blocks.module.scss"
+import {svgIcons} from "../../../assets/svgIcons";
 
 const title1 = "About game"
 const title2 = "Structure of game"
@@ -79,6 +80,7 @@ export const AboutGame = () => {
             </div>
 
             <img src="/png/how it works/1.png" alt="" className={style.img1}/>
+
         </>
     )
 }

@@ -1,16 +1,12 @@
 import style from "./WeAreReliable.module.scss"
 import {svgIcons} from "../../assets/svgIcons";
-import {useRef} from "react";
 import {ButtonOutlined} from "../X_Common/ButtonOutlined/ButtonOutlined";
-
-const account = "0x41eaD2756aDEawdas122SF41eaD2756aDEawdas122SF"
+import {CopyButton} from "../X_Common/CopyButton/CopyButton";
 
 export const WeAreReliable = () => {
-    const ref = useRef<HTMLParagraphElement>(null!);
-    const onCopy = () => {
-        // ref.current.select();
-        // document.execCommand('copy');
-    }
+    const account = "0x41eaD2756aDEawdas122SF41eaD2756aDEawdas122SF";
+    const onCopy = () => navigator.clipboard.writeText(account);
+
     return (
         <div className={style.weAreReliable}>
            <div className={style.inner}>
@@ -21,16 +17,14 @@ export const WeAreReliable = () => {
                     <p className={style.text}>The crypto game is based on a smart contract:</p>
 
                     <div className={style.accountWrapper}>
-                        <p className={style.account}
-                           ref={ref}
-                        >
+                        <p className={style.account}>
                             {account}
                         </p>
-                        <button className={style.copyBtn}
-                                onClick={onCopy}
-                        >
-                            {svgIcons.copy}
-                        </button>
+
+                        <CopyButton className={style.copyBtn}
+                                             onClick={onCopy}
+                        />
+
                         <button className={style.linkBtn}>
                             {svgIcons.link2}
                         </button>

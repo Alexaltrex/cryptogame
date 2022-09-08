@@ -6,11 +6,13 @@ import {useRef} from "react";
 import {useOutsideClick} from "../../hooks/useOutsideClick";
 import {svgIcons} from "../../assets/svgIcons";
 import {walletsData} from "./walletsData";
+import {useRouter} from "next/router";
 
 export const ConnectWallet = observer(() => {
     const {connectWallet, setConnectWallet, setLogin} = useStore();
     const ref = useRef<HTMLDivElement>(null!)
     useOutsideClick(ref, () => setConnectWallet(false));
+    const router = useRouter();
 
     return (
         <div className={clsx({
@@ -41,7 +43,8 @@ export const ConnectWallet = observer(() => {
                                 <button className={style.arrowBtn}
                                         onClick={() => {
                                             setLogin(true);
-                                            setConnectWallet(false)
+                                            setConnectWallet(false);
+                                            router.push("/dashboard")
                                         }}
                                 >
                                     {svgIcons.arrow_right}

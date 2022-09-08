@@ -1,4 +1,4 @@
-import "../assets/scss/globals.css"
+import "../assets/scss/global_styles.scss"
 import type { AppProps } from 'next/app'
 import {createContext, useEffect} from "react";
 import {Store, store} from "../store/store";

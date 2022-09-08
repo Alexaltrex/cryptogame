@@ -180,6 +180,12 @@
       line-height: 25px;
       //text-decoration: none;
       color: #FFF;
+      transition: 0.3s;
+
+      &:hover {
+        color: $color_hover;
+      }
+
     }
 
     .imgs {

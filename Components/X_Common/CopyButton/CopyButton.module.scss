@@ -1,0 +1,28 @@
+@import "./assets/scss/app";
+
+.copyButton {
+  @include button;
+  width: 20px;
+  height: 20px;
+
+  svg {
+    path {
+      fill: rgba(255,255,255, 0.5);
+      transition: 0.3s;
+    }
+  }
+
+  &_done {
+    svg {
+      path {
+        fill: #FFF;
+      }
+    }
+  }
+
+  &:hover {
+    svg path {
+      fill: #FFF;
+    }
+  }
+}

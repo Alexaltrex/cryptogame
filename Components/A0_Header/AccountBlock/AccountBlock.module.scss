@@ -159,6 +159,10 @@
           margin-left: 14px;
           width: 16px;
           height: 16px;
+
+          path {
+            transition: 0.3s;
+          }
         }
 
         p {
@@ -166,11 +170,49 @@
           font-weight: 300;
           font-size: 14px;
           line-height: 140%;
-          color: #FFFFFF;
+          color: #83848E;
+          transition: 0.3s;
+        }
+
+        &:nth-child(1), &:nth-child(2) {
+          svg {
+
+            path {
+              fill: #83848E;
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          svg {
+            path {
+              stroke: #83848E;
+            }
+          }
         }
 
         &:hover {
           background: #202537;
+
+          p {
+            color: #FFF;
+          }
+
+          &:nth-child(1), &:nth-child(2) {
+            svg {
+              path {
+                fill: #FFF;
+              }
+            }
+          }
+
+          &:nth-child(3) {
+            svg {
+              path {
+                stroke: #FFF;
+              }
+            }
+          }
         }
       }
     }

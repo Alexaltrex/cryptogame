@@ -2,6 +2,7 @@ import {FC} from "react";
 import style from "./InvitedBlock.module.scss";
 import {svgIcons} from "../../../assets/svgIcons";
 import clsx from "clsx";
+import {CopyButton} from "../CopyButton/CopyButton";
 
 interface IInvitedBlock {
     label: string
@@ -51,11 +52,11 @@ export const InvitedBlock: FC<IInvitedBlock> = ({
                     <p className={style.value}>
                         {value}
                     </p>
-                    <button className={style.copyBtn}
-                            onClick={onCopy}
-                    >
-                        {svgIcons.copy}
-                    </button>
+
+                    <CopyButton className={style.copyBtn}
+                                         onClick={onCopy}
+                    />
+
                     {
                         onClick &&
                         <button className={style.linkBtn}

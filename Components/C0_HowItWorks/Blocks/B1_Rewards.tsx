@@ -1,5 +1,6 @@
 import style from "./Blocks.module.scss";
 import {svgIcons} from "../../../assets/svgIcons";
+import {CopyButton} from "../../X_Common/CopyButton/CopyButton";
 
 
 
@@ -40,11 +41,11 @@ export const Rewards = () => {
                 <p className={style.account}>
                     {account}
                 </p>
-                <button className={style.copyBtn}
-                        onClick={onCopy}
-                >
-                    {svgIcons.copy}
-                </button>
+
+                <CopyButton className={style.copyBtn}
+                            onClick={onCopy}
+                />
+
                 <button className={style.linkBtn}>
                     {svgIcons.link2}
                 </button>

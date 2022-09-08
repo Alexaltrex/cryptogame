@@ -6,6 +6,9 @@ import {Checkbox} from "@mui/material";
 import Link from "next/link";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../store/useStore";
+import {ButtonCustom} from "../X_Common/ButtonCustom/ButtonCustom";
+import {svgIcons} from "../../assets/svgIcons";
+import clsx from "clsx";
 
 interface IValues {
     name: string
@@ -50,11 +53,6 @@ export const WriteToUs = observer(() => {
     });
 
     const [checked, setChecked] = useState(false);
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setChecked(event.target.checked);
-    };
-
 
     return (
         <div className={style.writeToUs}>
@@ -117,29 +115,21 @@ export const WriteToUs = observer(() => {
                 </div>
 
                 <div className={style.checkboxWrapper}>
-                    <Checkbox
-                        checked={checked}
-                        onChange={handleChange}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                        sx={{
-                            padding: 0,
-                            color: "#FFF",
-                            "&.Mui-checked": {
-                                color: "#745BD7"
-                            }
-                        }}
-                    />
+                    <button className={clsx({
+                        [style.checkBtn]: true,
+                        [style.checkBtn_checked]: checked,
+                    })}
+                            onClick={() => {setChecked(!checked)}}
+                    >
+                        {checked && svgIcons.check}
+                    </button>
 
                     <div className={style.policyWrapper}>
                         I agree with the <Link href="policy"><a className={style.policy}>Privaci Poilicy</a></Link>
                     </div>
                 </div>
 
-                <button type="submit"
-                        className={style.submitBtn}
-                >
-                    Send
-                </button>
+                <ButtonCustom label="Send" type="submit" className={style.submitBtn}/>
             </form>
         </div>
     )

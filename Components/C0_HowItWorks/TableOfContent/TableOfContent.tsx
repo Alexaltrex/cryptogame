@@ -4,6 +4,7 @@ import Link from "next/link";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../../store/useStore";
 import clsx from "clsx";
+import {ButtonCustom} from "../../X_Common/ButtonCustom/ButtonCustom";
 
 export const TableOfContent = observer(() => {
     const {activeLink, setActiveLink} = useStore();
@@ -33,6 +34,7 @@ export const TableOfContent = observer(() => {
                      style={{top: ` ${26 + 41 * index}px`}}
                 />
             </div>
+            <ButtonCustom label="Join the Game" className={style.joinBtn}/>
         </aside>
     )
 })

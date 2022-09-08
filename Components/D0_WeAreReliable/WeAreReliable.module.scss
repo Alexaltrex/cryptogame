@@ -98,22 +98,27 @@
           text-overflow: ellipsis;
         }
 
-        .copyBtn, .linkBtn {
+        .linkBtn {
           @include button;
+          margin-left: 10px;
+          width: 20px;
+          height: 20px;
 
           svg path {
-            fill: #A496DD;
+            transition: 0.3s;
+            fill: rgba(255, 255, 255, 0.5);
+          }
+
+          &:hover {
+            svg path {
+              fill: rgba(255, 255, 255, 1);
+            }
           }
         }
 
         .copyBtn {
           margin-left: 15px;
         }
-
-        .linkBtn {
-          margin-left: 10px;
-        }
-
 
 
       }
@@ -214,6 +219,8 @@
         position: absolute;
         top: -45px;
         right: -40px;
+        width: 125px;
+        //height: 26px;
       }
 
       .labelDesktop {
@@ -221,6 +228,8 @@
         position: absolute;
         top: -40px;
         left: -50px;
+        width: 150px;
+        //height: 35px;
       }
 
     }

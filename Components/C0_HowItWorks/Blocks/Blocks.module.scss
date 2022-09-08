@@ -71,32 +71,28 @@
   }
 }
 
+
 .img0 {
-  display: block;
   margin-top: 30px;
-  width: 320px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 280px;
+  transform: translateX(-28px);
 
   @include desktop {
+    transform: translateX(-54px);
     width: 576px;
-    margin-left: 0;
-    margin-right: 0;
   }
 }
 
 .img1 {
   display: block;
   margin-top: 30px;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 280px;
+  transform: translateX(-28px);
 
   @include desktop {
     margin-top: 40px;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    width: 560px;
+    transform: translateX(-54px);
   }
 }
 
@@ -120,7 +116,6 @@
     height: 36px;
     left: 50%;
     transform: translate(-50%, -50%);
-
 
 
     .labelSlide {
@@ -265,20 +260,29 @@
   }
 
   .copyBtn {
-    @include button;
     margin-left: 15px;
   }
 
   .linkBtn {
     @include button;
     margin-left: 10px;
+    width: 20px;
+    height: 20px;
+
+    svg path {
+      transition: 0.3s;
+      fill: rgba(255,255,255,0.5);
+    }
+
+    &:hover {
+      svg path {
+        fill: rgba(255,255,255,1);
+      }
+    }
+
   }
 
-  .copyBtn, .linkBtn {
-    svg path {
-      fill: #A496DD;
-    }
-  }
+
 
 }
 
@@ -326,6 +330,13 @@
 
     &:not(:first-child) {
       border-top: 1px solid #2D3242;
+    }
+
+    &:first-child {
+      @include desktop {
+        border-top: 1px solid #2D3242;
+      }
+
     }
 
     .cell {

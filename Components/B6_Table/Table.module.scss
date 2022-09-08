@@ -31,6 +31,7 @@
       }
 
       .row {
+        @include tableRow;
         padding: 15px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -147,10 +148,16 @@
       font-size: 14px;
       line-height: 25px;
       color: #FFFFFF;
+      transition: 0.3s;
 
       @include desktop {
         font-size: 16px;
         margin-top: 40px;
+      }
+
+      &:hover {
+        color: $color_hover;
+        border-color: $color_hover;
       }
     }
 

@@ -133,12 +133,26 @@
         text-overflow: ellipsis;
       }
 
-      .copyBtn, .linkBtn {
+      .copyBtn {
+        margin-left: 15px;
+      }
+
+      .linkBtn {
         @include button;
         margin-left: 15px;
+        width: 20px;
+        height: 20px;
 
         svg path {
-          fill: #A496DD;
+          transition: 0.3s;
+          fill: rgba(255,255,255,0.5);
+        }
+
+        &:hover {
+          svg path {
+            fill: rgba(255,255,255,1);
+          }
+
         }
       }
 
