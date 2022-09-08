@@ -41,7 +41,7 @@ export const AccountBlock = observer(() => {
                 >
                     <div className={style.metamask}>{svgIcons.metamask}</div>
                     <p className={style.account}>{account}</p>
-                    <div className={clsx(style.arrow, open && style.arrow_open)}>{svgIcons.arrow_down}</div>
+                    <div className={clsx(style.arrow, open && style.arrow_open)}>{svgIcons.arrow_down2}</div>
                 </div>
 
 
