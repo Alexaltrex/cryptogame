@@ -11,7 +11,7 @@ export const ConnectToUs = () => {
                 </p>
                 <p className={style.text}>Stay informed. News, Promo, Level updates etc.</p>
 
-                <ButtonOutlined label="connect"
+                <ButtonOutlined label="Connect"
                                 icon={svgIcons.right_arrow}
                                 animateIcon={false}
                                 className={style.btn}

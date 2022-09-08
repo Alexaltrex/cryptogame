@@ -2,10 +2,14 @@
 
 .topPlayers {
   @include container;
+  padding-top: 70px;
+
+  @include desktop {
+    padding-top: 150px;
+  }
 
   .inner {
     @include inner;
-    padding-top: 150px;
 
     .cards {
 
@@ -203,6 +207,7 @@
             height: 30px;
             background: #272A3B;
             border-radius: 5px;
+            border: 1px solid rgba(181, 207, 204, 0.17);
 
             svg {
               width: 14px;

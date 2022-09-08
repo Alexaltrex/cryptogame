@@ -127,7 +127,6 @@
     }
 
 
-
     .list {
       background: #1A1E30;
       border-radius: 10px;
@@ -170,23 +169,36 @@
           font-weight: 300;
           font-size: 14px;
           line-height: 140%;
-          color: #83848E;
+          color: #FFF;
           transition: 0.3s;
+
+          @include desktop {
+            color: #83848E;
+          }
         }
 
         &:nth-child(1), &:nth-child(2) {
           svg {
-
             path {
-              fill: #83848E;
+              fill: #FFF;
+
+              @include desktop {
+                fill: #83848E;
+              }
             }
+
+
           }
         }
 
         &:nth-child(3) {
           svg {
             path {
-              stroke: #83848E;
+              stroke: #FFF;
+
+              @include desktop {
+                stroke: #83848E;
+              }
             }
           }
         }

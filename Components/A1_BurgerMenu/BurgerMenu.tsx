@@ -31,7 +31,10 @@ export const BurgerMenu = observer(() => {
                 !login &&
                 <ButtonCustom label="Let’s Start"
                               className={style.btn}
-                              onClick={() => setConnectWallet(true)}
+                              onClick={() => {
+                                  setBurgerMenu(false)
+                                  setConnectWallet(true)
+                              }}
                 />
             }
         </div>
