@@ -12,16 +12,41 @@
       border-radius: 15px;
       border: 1px solid rgba(181, 207, 204, 0.17);
       margin-top: 30px;
-      padding: 44px 20px;
+      padding: 44px 20px 0;
 
       @include desktop {
         padding: 44px 30px;
+      }
+
+      &_showMore {
+        padding: 44px 20px;
       }
 
       .cards_mobile {
         @include onlyMobile(grid);
         grid-template-rows: repeat(6, 1fr);
         grid-row-gap: 44px;
+
+        .cardWrapper {
+          padding-top: 15px;
+          position: relative;
+          height: 80px;
+          overflow: hidden;
+
+          &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+            //background: rgba(255,0,0,0.5);
+            background: linear-gradient(354.97deg, #191C2E 5.91%, rgba(25, 28, 46, 0) 101.15%);
+          }
+
+        }
       }
 
       .cards_desktop {
@@ -34,6 +59,15 @@
 
     }
 
+    .moreBtn {
+      @include button;
+      @include onlyMobile;
+      margin: 20px auto 0;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 25px;
+      border-bottom: 1px solid #FFF;
+    }
 
   }
 }
