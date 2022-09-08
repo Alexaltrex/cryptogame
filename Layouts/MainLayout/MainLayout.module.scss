@@ -19,6 +19,7 @@
   }
 
   .balls {
+    @include onlyDesktop();
     overflow: hidden;
     position: absolute;
     z-index: 1;
