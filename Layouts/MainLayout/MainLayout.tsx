@@ -80,6 +80,14 @@ const balls = {
             ballSrc.yellow,
         ]
     },
+    "/policy": {
+        top: 500,
+        balls: [
+            ballSrc.purple,
+            ballSrc.blue,
+            ballSrc.yellow,
+        ]
+    },
 }
 
 
