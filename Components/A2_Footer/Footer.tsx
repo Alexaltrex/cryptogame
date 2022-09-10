@@ -6,6 +6,7 @@ import {AnimatedLink} from "../X_Common/AnimatedLink/AnimatedLink";
 import clsx from "clsx";
 import {observer} from "mobx-react-lite";
 import {useStore} from "../../store/useStore";
+import {svgIcons} from "../../assets/svgIcons";
 
 export const footerLinks = [
     {label: "How it works?", href: "howItWorks"},
@@ -22,8 +23,7 @@ export const Footer = observer(() => {
                 <div className={style.inner}>
                     <Link href="/" onClick={() => setLogin(false)}>
                         <a className={style.logoBlock}>
-                            <img src="/png/logo.png" alt=""/>
-                            <p className={style.text}>Good Game</p>
+                            {svgIcons.logo}
                         </a>
                     </Link>
 

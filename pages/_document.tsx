@@ -4,7 +4,7 @@ export default function Document() {
     return (
         <Html style={{scrollBehavior: 'smooth'}}>
             <Head>
-                {/*<link rel="shortcut icon" href="/logo.png" />*/}
+                <link rel="shortcut icon" href="/png/logo.png" />
                 <link rel="preconnect" href="https://fonts.googleapis.com"/>
                 <link rel="preconnect" href="https://fonts.gstatic.com"/>
                 <link

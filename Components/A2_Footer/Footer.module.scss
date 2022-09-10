@@ -61,26 +61,16 @@
         text-decoration: none;
         color: #FFF;
 
-        img {
-          display: block;
-          height: 33px;
+        svg {
+          width: 98px;
+          height: 36px;
 
           @include desktop {
-            height: 45px;
+            width: 129px;
+            height: 48px;
           }
         }
 
-        .text {
-          font-weight: 500;
-          font-size: 12.9873px;
-          line-height: 100%;
-          width: 41px;
-
-          @include desktop {
-            font-size: 18px;
-            width: 57px;
-          }
-        }
       }
 
       .links {

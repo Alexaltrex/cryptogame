@@ -34,8 +34,7 @@ export const Header = observer(() => {
                            setBurgerMenu(false)
                        }}
                     >
-                        <img src="/png/logo.png" alt=""/>
-                        <p className={style.text}>Good Game</p>
+                        {svgIcons.logo}
                     </a>
                 </Link>
 
