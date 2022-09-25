@@ -22,8 +22,11 @@ export const AccountBlock = observer(() => {
     // })
 
     const list = [
-        {icon: svgIcons.copy, label: "Copy Address", onClick: () => navigator.clipboard.writeText(account) },
-        {icon: svgIcons.share, label: "View Explorer", onClick: () => {}},
+        {icon: svgIcons.copy, label: "Copy Address", onClick: () => navigator.clipboard.writeText(account)},
+        {
+            icon: svgIcons.share, label: "View Explorer", onClick: () => {
+            }
+        },
         {icon: svgIcons.logout, label: "Disconnect Wallet", onClick: () => setLogin(false)},
     ]
 
@@ -44,13 +47,13 @@ export const AccountBlock = observer(() => {
                     <div className={clsx(style.arrow, open && style.arrow_open)}>{svgIcons.arrow_down2}</div>
                 </div>
 
-
                 {
                     open &&
                     <div className={style.list} ref={ref}>
                         {
                             list.map(({icon, label, onClick}, index) => (
-                                <button className={style.listItem}
+                                <button key={index}
+                                        className={style.listItem}
                                         onClick={() => {
                                             onClick();
                                             setOpen(false);

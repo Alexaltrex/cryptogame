@@ -29,7 +29,7 @@ export const OpenLevel = observer(() => {
 
                 <p className={style.title}>Opening the Level</p>
                 <p className={style.text}>
-                    You're going to open <span>Level 3</span> for <span>0.075 BNB</span>, right?
+                    {`You're going to open`} <span>Level 3</span> for <span>0.075 BNB</span>, right?
                 </p>
 
                 <div className={style.btns}>
